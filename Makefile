@@ -5,7 +5,7 @@ CXX = g++
 CXXFLAGS = -std=c++23 -Wall -g
 
 # Target executable
-TARGET = main
+TARGET = simplify
 
 # Source files
 SRC = main.cpp
