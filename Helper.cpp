@@ -2,12 +2,15 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
+#include <map>
 
-int Read_CSV(std::string file_path, std::map<std::pair<std::string, std::string>, Vertex>& poly){
+int Read_CSV(std::string file_path, std::map <int, std::vector<Vertex>>& poly){
     std::ifstream ifs(file_path);
 
     if(!ifs.is_open()){
         std::cerr << "No such path exists\n";
+        ifs.close();
         return 0;
     }
     std::string line{};
@@ -21,20 +24,20 @@ int Read_CSV(std::string file_path, std::map<std::pair<std::string, std::string>
         std::size_t pos{};
         std::size_t cur_pos{};
         int var = 0;
-        std::string ring_id{};
-        std::string vertex_id{};
+        int ring_id{};
+       // int vertex_id{};
 
         Vertex v;
         while((pos = line.find(",", cur_pos)) != std::string::npos){
             switch(var){
                 case 0:
                 //Ring Id
-                ring_id = line.substr(0, pos);
+                ring_id = std::stoi(line.substr(0, pos));
                 //std::cout << "Ring Id: " << ring_id;
                 break;
 
                 case 1:
-                vertex_id = line.substr(cur_pos, pos - cur_pos);
+                //vertex_id = std::stoi(line.substr(cur_pos, pos - cur_pos));
                 //std::cout << " Vertex Id: " << vertex_id;
                 break;
 
@@ -49,6 +52,31 @@ int Read_CSV(std::string file_path, std::map<std::pair<std::string, std::string>
         }
         v.y = std::stof(line.substr(cur_pos, line.size() - cur_pos));
         //std::cout << " Y Value: " << v.y << std::endl;
+        
+        poly[ring_id].emplace_back(v);
+        
+        
+        
     }
+    ifs.close();
     return 1;
+}
+
+
+void Print_Poly(std::string file_path, std::map <int, std::vector<Vertex>>const & poly){
+    std::ofstream ofs(file_path);
+    if(!ofs.is_open()){
+        std::cerr << "Output Check File cannot be opened!!/n";
+        ofs.close();
+        return;
+    }
+    for(auto const &[key, val] : poly){
+        for(std::size_t i = 0; i < val.size(); i++){
+            ofs << key << "," << i << "," << val[i].x<< "," << val[i].y;
+            if(i < val.size() - 1){
+                ofs << std::endl;
+            }
+        }
+    }
+    ofs.close();
 }

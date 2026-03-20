@@ -17,6 +17,11 @@ all: $(TARGET)
 $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 
+# ./simplify input_file output_file_for_checking
+# make run --> command to run this
+run:
+	./$(TARGET) test.csv output.csv
+
 # Run with valgrind
 valgrind: $(TARGET)
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(TARGET)

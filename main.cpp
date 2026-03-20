@@ -4,11 +4,14 @@
 
 
 #include <iostream>
+//Ring id --> key
+// Vector<int> --> vector of vertex ids for that ring --> value
+std::map <int, std::vector<Vertex>> polygon;
 
-std::map<std::pair<std::string, std::string>, Vertex> polygon;
 
 // MAIN FUNCTION
 int main(int argc, char *argv[]) {
-    std::cout << argv[1];
-   return Read_CSV(argv[1], polygon);
+    Read_CSV(argv[1], polygon);
+    Print_Poly(argv[2], polygon);
+    return 0;
 }

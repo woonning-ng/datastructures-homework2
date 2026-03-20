@@ -2,6 +2,7 @@
 #include <map>
 #include <utility>
 #include <string>
+#include <vector>
 #ifndef POLYGON_HPP
 #define POLYGON_HPP
 struct Vertex{
@@ -14,7 +15,10 @@ struct Line{
     Vertex * b;
 };
 
-//Key --> ring_id, vertex_id
-//Value --> Vertex
-extern std::map<std::pair<std::string, std::string>, Vertex> polygon;
+//Ring id --> key
+// Vector<int> --> vector of vertex ids for that ring --> value
+extern std::map <int, std::vector<Vertex>> polygon;
+
+
+
 #endif
