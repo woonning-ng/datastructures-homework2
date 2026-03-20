@@ -1,3 +1,5 @@
+#include "math.hpp"
+
 #include <iostream>
 
 // MAIN FUNCTION
