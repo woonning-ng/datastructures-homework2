@@ -5,13 +5,26 @@
 #include <vector>
 #ifndef POLYGON_HPP
 #define POLYGON_HPP
+
 struct Vertex{
-    float x{};
-    float y{};
+    float x{};          // x coord
+    float y{};          // y coord
+    bool active = true; // since lines can be collapsed therefore removing
+                        // vertices and we are using pointers to Vertices in
+                        // lines, to avoid dangling pointers we can just set
+                        // vertices to false
+
+    // operator overloads
+    Vertex operator+(const Vertex& other) const { return { x + other.x, y + other.y }; }
+    Vertex operator-(const Vertex& other) const { return { x - other.x, y - other.y }; }
+    Vertex operator*(float t) const { return { x * t, y * t }; }
 };
 
+// since Vector and Vertex are represented the same way
+typedef Vertex Vector;
+
 struct Line{
-    Vertex *  a;
+    Vertex * a;
     Vertex * b;
 };
 
