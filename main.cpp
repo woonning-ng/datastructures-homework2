@@ -11,9 +11,13 @@ std::map <int, Vertex*> rings_list;
 
 // MAIN FUNCTION
 int main(int argc, char *argv[]) {
+    // polygon tests
     Read_CSV(argv[1], polygon);
     Print_Poly(argv[2], polygon);
     Set_RingList(polygon);
     Print_RingList(rings_list, argv[3]);
+
+    // math tests
+
     return 0;
 }
