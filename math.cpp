@@ -35,10 +35,10 @@ double CrossProduct(Vector A, Vector B) {
 
 // line intersection - should not return anything proper
 // if lines are parallel. therefore it is encased in an optional
-// std::optional<Vertex> LineIntersection(Line A, Line B) {
-//     // guards in case the vertices are null for whatever
-//     // reason
-//     if (A.a == nullptr || A.b == nullptr || B.a == nullptr || B.b == nullptr) return std::nullopt;
+ std::optional<Vertex> LineIntersection(Line A, Line B) {
+     // guards in case the vertices are null for whatever
+     // reason
+     if (A.a == nullptr || A.b == nullptr || B.a == nullptr || B.b == nullptr) return std::nullopt;
 
     // xdiff = (line1[0][0] - line1[1][0], line2[0][0] - line2[1][0])
     // ydiff = (line1[0][1] - line1[1][1], line2[0][1] - line2[1][1])
@@ -49,9 +49,9 @@ double CrossProduct(Vector A, Vector B) {
     if (div == 0) return std::nullopt; // lines do not intersect
 
     // otherwise, continue calculations and get intersection point
-    Vertex d = { Determinant(A), Determinant(B) };
+    Vertex d = { (float)Determinant(A), (float)Determinant(B) };
 
-    Vertex result = { Determinant(d, xdiff) / div, Determinant(d, ydiff) };
+    Vertex result = { (float)Determinant(d, xdiff) / (float)div, (float)Determinant(d, ydiff) / (float)div };
     
     return result;
 }
@@ -59,6 +59,8 @@ double CrossProduct(Vector A, Vector B) {
 // should only be used in ComputePointE
 bool DoLinesIntersect(Line A, Line B) {
     if (A.a == nullptr || A.b == nullptr || B.a == nullptr || B.b == nullptr) return false;
+
+    return true;
 }
 
 
