@@ -7,10 +7,10 @@
 //Ring id --> key
 // Vector<int> --> vector of vertex ids for that ring --> value
 std::map <int, std::vector<Vertex>> polygon;
-std::map <int, Vertex*> rings_list;
+std::map <int, Vertex*> rings_list; // use this, polygons should be stored in ringlist
 
-// usage:
-// ./simplify input.csv output.csv
+// usage?
+// ./simplify input.csv output.csv output_ring.csv
 
 // MAIN FUNCTION
 int main(int argc, char *argv[]) {

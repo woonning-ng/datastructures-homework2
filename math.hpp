@@ -7,6 +7,10 @@
 #include "Polygon.hpp" // will be performing operations on Line, Vertex
 
 #include <optional>
+#include <limits>
+#include <algorithm>
+
+#define EPSILON  std::numeric_limits<double>::epsilon()
 
 // -- HELPERS --
 double Determinant(Vertex A, Vertex B);
@@ -30,7 +34,8 @@ bool DoLinesIntersect(Line A, Line B);
 
 // -- POLYGON RELATED OPERATIONS -- 
 // signed area - shoelace method, sign tells orientation
-double SignedArea(std::vector<Vertex> polygon);
+// IMPORTANT: VERTICES MUST BE ENTERED IN ANTICLOCKWISE ORDER
+double SignedArea(std::vector<Vertex> poly, bool reverse = 0);
 
 double TriangleArea(Vertex A, Vertex B, Vertex C);
 

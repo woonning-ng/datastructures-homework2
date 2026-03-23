@@ -46,7 +46,7 @@ double CrossProduct(Vector A, Vector B) {
     Vertex ydiff = { A.a->y - A.b->y, B.a->y - B.b->y };
 
     double div = Determinant(xdiff, ydiff);
-    if (div == 0) return std::nullopt; // lines do not intersect
+    if (div < EPSILON) return std::nullopt; // lines do not intersect (should be div == 0, because double precision)
 
     // otherwise, continue calculations and get intersection point
     Vertex d = { (float)Determinant(A), (float)Determinant(B) };
@@ -67,9 +67,13 @@ bool DoLinesIntersect(Line A, Line B) {
 // -- POLYGON RELATED OPERATIONS -- 
 // signed area - shoelace method, sign tells orientation
 // IMPORTANT: VERTICES MUST BE ENTERED IN ANTICLOCKWISE ORDER
-double SignedArea(std::vector<Vertex> polygon) {
+double SignedArea(std::vector<Vertex> poly, bool reverse) {
     int noVertices = (int)polygon.size();
     double sum1; double sum2;
+
+    // if polygon is not reversed already, reverse it
+    std::vector<Vertex> polygon = poly;
+    if (reverse) std::reverse(polygon.begin(), polygon.end());
 
     // tally all pairs minus the last
     for (int i = 0; i < noVertices - 1; i++) {
