@@ -3,14 +3,28 @@
 #include <iostream>
 #include <fstream>
 
-//Insert a new vertex btw 2 vertex
-void Insert_Vertex(Vertex * first, Vertex * second, Vertex * new_vert){
+//Insert a new vertex after a vertex
+void Insert_Vertex(Vertex * first, Vertex * new_vert){
+    Vertex * cur = first->next;
+    first->next = new_vert;
+    new_vert->next = cur;
+    cur->prev = new_vert;
+    new_vert->prev = first;
 
 }
 
 //Delete a vertex
 void Delete_Vertex(Vertex * vert){
+    
 
+    Vertex * next = vert->next;
+    Vertex * prev = vert->prev;
+
+    prev->next = next;
+    next->prev = prev;
+
+    vert->prev = nullptr;
+    vert->next = nullptr;
 }
 
 

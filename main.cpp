@@ -14,6 +14,9 @@ int main(int argc, char *argv[]) {
     Read_CSV(argv[1], polygon);
     Print_Poly(argv[2], polygon);
     Set_RingList(polygon);
+    Vertex v = Vertex(10.0f,100.0f);
+    Insert_Vertex(rings_list[0], &v);
+    Delete_Vertex(&v);
     Print_RingList(rings_list, argv[3]);
     return 0;
 }
