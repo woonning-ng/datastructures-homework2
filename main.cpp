@@ -11,7 +11,11 @@ std::map <int, std::vector<Vertex>> polygon;
 
 // MAIN FUNCTION
 int main(int argc, char *argv[]) {
+    // polygon tests
     Read_CSV(argv[1], polygon);
     Print_Poly(argv[2], polygon);
+
+    // math tests
+
     return 0;
 }
