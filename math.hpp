@@ -8,6 +8,10 @@
 
 #include <optional>
 
+// -- HELPERS --
+double Determinant(Vertex A, Vertex B);
+double Determinant(Line line);
+
 // -- LINE RELATED OPERATIONS -- 
 
 // dot product
