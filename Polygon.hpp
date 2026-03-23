@@ -7,6 +7,14 @@
 #define POLYGON_HPP
 
 struct Vertex{
+    Vertex(float x_pos, float y_pos) : x(x_pos), y(y_pos){};
+    Vertex(){
+        x = 0.0f;
+        y = 0.0f;
+        active = true;
+        prev = nullptr;
+        next = nullptr;
+    };
     float x{};          // x coord
     float y{};          // y coord
     bool active = true; // since lines can be collapsed therefore removing
@@ -39,4 +47,6 @@ extern std::map <int, Vertex*> rings_list;
 
 void Set_RingList(std::map <int, std::vector<Vertex>> & poly_input);
 void Print_RingList(std::map <int, Vertex*> const& rings_list, std::string file_path);
+void Insert_Vertex(Vertex * first, Vertex * new_vert);
+void Delete_Vertex(Vertex * vert);
 #endif
