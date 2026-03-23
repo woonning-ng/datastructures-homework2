@@ -18,6 +18,10 @@ struct Vertex{
     Vertex operator+(const Vertex& other) const { return { x + other.x, y + other.y }; }
     Vertex operator-(const Vertex& other) const { return { x - other.x, y - other.y }; }
     Vertex operator*(float t) const { return { x * t, y * t }; }
+    
+    //Vertex --> Linked List
+    Vertex * prev = nullptr;
+    Vertex * next = nullptr;
 };
 
 // since Vector and Vertex are represented the same way
@@ -31,7 +35,8 @@ struct Line{
 //Ring id --> key
 // Vector<int> --> vector of vertex ids for that ring --> value
 extern std::map <int, std::vector<Vertex>> polygon;
+extern std::map <int, Vertex*> rings_list;
 
-
-
+void Set_RingList(std::map <int, std::vector<Vertex>> & poly_input);
+void Print_RingList(std::map <int, Vertex*> const& rings_list, std::string file_path);
 #endif

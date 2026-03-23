@@ -8,7 +8,7 @@ CXXFLAGS = -std=c++23 -Wall -g
 TARGET = simplify
 
 # Source files
-SRC = main.cpp Helper.cpp math.cpp
+SRC = main.cpp Helper.cpp math.cpp Polygon.cpp
 
 # Default rule
 all: $(TARGET)
@@ -20,7 +20,7 @@ $(TARGET): $(SRC)
 # ./simplify input_file output_file_for_checking
 # make run --> command to run this
 run:
-	./$(TARGET) test.csv output.csv
+	./$(TARGET) test.csv output.csv output_ring.csv
 
 # Run with valgrind
 valgrind: $(TARGET)

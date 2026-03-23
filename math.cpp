@@ -24,57 +24,57 @@ double CrossProduct(Vector A, Vector B) {
 
 // line intersection - should not return anything proper
 // if lines are parallel. therefore it is encased in an optional
-std::optional<Vertex> LineIntersection(Line A, Line B) {
-    // guards in case the vertices are null for whatever
-    // reason
-    if (A.a == nullptr || A.b == nullptr || B.a == nullptr || B.b == nullptr) return std::nullopt;
+// std::optional<Vertex> LineIntersection(Line A, Line B) {
+//     // guards in case the vertices are null for whatever
+//     // reason
+//     if (A.a == nullptr || A.b == nullptr || B.a == nullptr || B.b == nullptr) return std::nullopt;
 
 
-}
+// }
 
-// should only be used in ComputePointE
-bool DoLinesIntersect(Line A, Line B) {
+// // should only be used in ComputePointE
+// bool DoLinesIntersect(Line A, Line B) {
 
-}
+// }
 
 
-// -- POLYGON RELATED OPERATIONS -- 
-// signed area - shoelace method, sign tells orientation
-double SignedArea(std::vector<Vertex> polygon) {
+// // -- POLYGON RELATED OPERATIONS -- 
+// // signed area - shoelace method, sign tells orientation
+// double SignedArea(std::vector<Vertex> polygon) {
 
-}
+// }
 
-double TriangleArea(Vertex A, Vertex B, Vertex C) {
+// double TriangleArea(Vertex A, Vertex B, Vertex C) {
 
-}
+// }
 
-// topology checks
-// should be used everywhere else intopology checks
-bool SegmentsIntersect(Line A, Line B) {
+// // topology checks
+// // should be used everywhere else intopology checks
+// bool SegmentsIntersect(Line A, Line B) {
 
-}
+// }
 
-bool IsCollinear(Vertex A, Vertex B, Vertex C) {
+// bool IsCollinear(Vertex A, Vertex B, Vertex C) {
 
-}
+// }
 
-// edge case in intersection checks
-bool PointOnSegment(Vertex P, Line seg) {
+// // edge case in intersection checks
+// bool PointOnSegment(Vertex P, Line seg) {
 
-}
+// }
 
-// orientation check
-// returns -1, 0, 1 for clockwise, collinear, counterclockwise
-// can be used in winding checks and intersection logic
-int Orientation(Vertex A, Vertex B, Vertex C) {
+// // orientation check
+// // returns -1, 0, 1 for clockwise, collinear, counterclockwise
+// // can be used in winding checks and intersection logic
+// int Orientation(Vertex A, Vertex B, Vertex C) {
 
-}
+// }
 
-// ASPC
-Vertex ComputePointE(Line A, Line B) {
+// // ASPC
+// Vertex ComputePointE(Line A, Line B) {
+    
+// }
 
-}
+// double ArealDisplacement(Vertex A, Vertex B, Vertex C, Vertex D, Vertex E) {
 
-double ArealDisplacement(Vertex A, Vertex B, Vertex C, Vertex D, Vertex E) {
-
-}
+// }
