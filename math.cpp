@@ -90,33 +90,39 @@ double TriangleArea(Vertex A, Vertex B, Vertex C) {
     return CrossProduct(B - A, C - A) / 2.0;
 }
 
-// // topology checks
-// // should be used everywhere else intopology checks
-// bool SegmentsIntersect(Line A, Line B) {
+// topology checks
+// should be used everywhere else intopology checks
+bool SegmentsIntersect(Line A, Line B) {
 
-// }
+    return true;
+}
 
-// bool IsCollinear(Vertex A, Vertex B, Vertex C) {
+bool IsCollinear(Vertex A, Vertex B, Vertex C) {
 
-// }
+    return true;
+}
 
-// // edge case in intersection checks
-// bool PointOnSegment(Vertex P, Line seg) {
+// edge case in intersection checks
+bool PointOnSegment(Vertex P, Line seg) {
 
-// }
+    return true;
+}
 
-// // orientation check
-// // returns -1, 0, 1 for clockwise, collinear, counterclockwise
-// // can be used in winding checks and intersection logic
-// int Orientation(Vertex A, Vertex B, Vertex C) {
+// orientation check
+// returns -1, 0, 1 for clockwise, collinear, counterclockwise
+// can be used in winding checks and intersection logic
+int Orientation(Vertex A, Vertex B, Vertex C) {
 
-// }
+    return 1;
+}
 
-// // ASPC
-// Vertex ComputePointE(Line A, Line B) {
+// ASPC
+Vertex ComputePointE(Line A, Line B) {
     
-// }
+    return Vertex{};
+}
 
-// double ArealDisplacement(Vertex A, Vertex B, Vertex C, Vertex D, Vertex E) {
+double ArealDisplacement(Vertex A, Vertex B, Vertex C, Vertex D, Vertex E) {
 
-// }
+    return 0.0;
+}

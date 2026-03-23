@@ -9,6 +9,9 @@
 std::map <int, std::vector<Vertex>> polygon;
 std::map <int, Vertex*> rings_list;
 
+// usage:
+// ./simplify input.csv output.csv
+
 // MAIN FUNCTION
 int main(int argc, char *argv[]) {
     // polygon tests
