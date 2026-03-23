@@ -11,6 +11,7 @@ std::map <int, Vertex*> rings_list; // use this, polygons should be stored in ri
 
 // usage?
 // ./simplify input.csv output.csv output_ring.csv
+// e.g. ./simplify test_cases/input_original_06.csv test_cases/test06a.csv test_cases/test06b.csv
 
 // MAIN FUNCTION
 int main(int argc, char *argv[]) {
