@@ -7,7 +7,7 @@
 #define POLYGON_HPP
 
 struct Vertex{
-    Vertex(float x_pos, float y_pos) : x(x_pos), y(y_pos){};
+    Vertex(double x_pos, double y_pos) : x(x_pos), y(y_pos){};
     Vertex(){
         x = 0.0f;
         y = 0.0f;
@@ -15,8 +15,8 @@ struct Vertex{
         prev = nullptr;
         next = nullptr;
     };
-    float x{};          // x coord
-    float y{};          // y coord
+    double x{};          // x coord
+    double y{};          // y coord
     bool active = true; // since lines can be collapsed therefore removing
                         // vertices and we are using pointers to Vertices in
                         // lines, to avoid dangling pointers we can just set
@@ -25,7 +25,7 @@ struct Vertex{
     // operator overloads
     Vertex operator+(const Vertex& other) const { return { x + other.x, y + other.y }; }
     Vertex operator-(const Vertex& other) const { return { x - other.x, y - other.y }; }
-    Vertex operator*(float t) const { return { x * t, y * t }; }
+    Vertex operator*(double t) const { return { x * t, y * t }; }
     
     //Vertex --> Linked List
     Vertex * prev = nullptr;

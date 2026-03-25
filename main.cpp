@@ -16,15 +16,58 @@ std::map <int, Vertex*> rings_list; // use this, polygons should be stored in ri
 // MAIN FUNCTION
 int main(int argc, char *argv[]) {
     // polygon tests
-    Read_CSV(argv[1], polygon);
-    Print_Poly(argv[2], polygon);
-    Set_RingList(polygon);
-    Vertex v = Vertex(10.0f,100.0f);
-    Insert_Vertex(rings_list[0], &v);
-    Delete_Vertex(&v);
-    Print_RingList(rings_list, argv[3]);
+    // {
+    // Read_CSV(argv[1], polygon);
+    // Print_Poly(argv[2], polygon);
+    // Set_RingList(polygon);
+    // Vertex v = Vertex(10.0f,100.0f);
+    // Insert_Vertex(rings_list[0], &v);
+    // Delete_Vertex(&v);
+    // Print_RingList(rings_list, argv[3]);
+    // }
 
     // math tests
+    {
+        Vertex A = {32.5f, 55.5f};
+        Vertex B = {-113.3f, -245.2f};
+        Vertex C = {67.898f, -87.778f};
+        Vertex D = {-12.04f, -13.3f};
+
+        Vertex E = {0.0f, 0.0f};
+        Vertex F = {5.0f, 0.0f};
+        Vertex G = {2.0f, 3.0f};
+        Vertex H = {2.0f, -3.0f};
+
+        Vector V = {2.0f, 3.0f};
+        Vector W = {4.0f, 5.0f};
+
+        Line AB = {&A, &B};
+        Line CD = {&C, &D};
+
+        Line EF = {&E, &F};
+        Line GH = {&H, &G}; // but if i do GH it breaks??
+
+        std::cout << Determinant(A, B) << std::endl;  // -1680.85
+        std::cout << Determinant(AB) << std::endl;    // -1680.85
+        std::cout << DotProduct(V, W) << std::endl;   // 23
+        std::cout << CrossProduct(V, W) << std::endl; // -2 -> { 0, 0, -2 }
+
+        std::optional<Vertex> oV = LineIntersection(AB, CD);
+        std::string intersectionOutput = (oV == std::nullopt ? "no intersection" : "{" + std::to_string(oV->x) + "," + std::to_string(oV->y) + "}");
+        std::cout << intersectionOutput << std::endl;
+
+         std::optional<Vertex> oV2 = LineIntersection(EF, GH);
+        std::string intersectionOutput2 = (oV2 == std::nullopt ? "no intersection" : "{" + std::to_string(oV2->x) + "," + std::to_string(oV2->y) + "}");
+        std::cout << intersectionOutput2 << std::endl;
+
+        // do lines intersect here
+
+        // signed area here
+
+        std::cout << TriangleArea(A, B, C) << std::endl;
+
+        // rest of checks here
+    }
 
     return 0;
 }

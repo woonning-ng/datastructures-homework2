@@ -46,23 +46,15 @@ double CrossProduct(Vector A, Vector B) {
     Vertex ydiff = { A.a->y - A.b->y, B.a->y - B.b->y };
 
     double div = Determinant(xdiff, ydiff);
-    if (div < EPSILON) return std::nullopt; // lines do not intersect (should be div == 0, because double precision)
+    if (std::abs(div) < EPSILON) return std::nullopt; // lines do not intersect (should be div == 0, because double precision)
 
     // otherwise, continue calculations and get intersection point
-    Vertex d = { (float)Determinant(A), (float)Determinant(B) };
+    Vertex d = { Determinant(A), Determinant(B) };
 
-    Vertex result = { (float)Determinant(d, xdiff) / (float)div, (float)Determinant(d, ydiff) / (float)div };
+    Vertex result = { Determinant(d, xdiff) / div, Determinant(d, ydiff) / div };
     
     return result;
 }
-
-// should only be used in ComputePointE
-bool DoLinesIntersect(Line A, Line B) {
-    if (A.a == nullptr || A.b == nullptr || B.a == nullptr || B.b == nullptr) return false;
-
-    return true;
-}
-
 
 // -- POLYGON RELATED OPERATIONS -- 
 // signed area - shoelace method, sign tells orientation
@@ -96,37 +88,68 @@ double TriangleArea(Vertex A, Vertex B, Vertex C) {
 
 // topology checks
 // should be used everywhere else intopology checks
+// DoLinesIntersect  -> only fails if lines are PARALLEL (direction vectors same)
+// SegmentsIntersect -> fails if parallel OR if intersection point is outside both segments
+// lines - infinite line, segment - has end points
 bool SegmentsIntersect(Line A, Line B) {
+    if (A.a == nullptr || A.b == nullptr || B.a == nullptr || B.b == nullptr) return false;
 
-    return true;
+    int d1 = Orientation(*B.a, *B.b, *A.a);
+    int d2 = Orientation(*B.a, *B.b, *A.b);
+    int d3 = Orientation(*A.a, *A.b, *B.a);
+    int d4 = Orientation(*A.a, *A.b, *B.b);
+
+    // general case
+    if (d1 != d2 && d3 != d4) return true;
+
+    // collinear edge cases
+    if (d1 == 0 && PointOnSegment(*A.a, B)) return true;
+    if (d2 == 0 && PointOnSegment(*A.b, B)) return true;
+    if (d3 == 0 && PointOnSegment(*B.a, A)) return true;
+    if (d4 == 0 && PointOnSegment(*B.b, A)) return true;
+
+    return false;
 }
 
 bool IsCollinear(Vertex A, Vertex B, Vertex C) {
-
-    return true;
+    return Orientation(A, B, C) == 0;
 }
 
 // edge case in intersection checks
 bool PointOnSegment(Vertex P, Line seg) {
+    // P must be collinear with segment AND within the bounding box
+    if (!IsCollinear(*seg.a, P, *seg.b)) return false;
 
-    return true;
+    return std::min(seg.a->x, seg.b->x) <= P.x && P.x <= std::max(seg.a->x, seg.b->x) &&
+    std::min(seg.a->y, seg.b->y) <= P.y && P.y <= std::max(seg.a->y, seg.b->y);
 }
 
 // orientation check
 // returns -1, 0, 1 for clockwise, collinear, counterclockwise
 // can be used in winding checks and intersection logic
 int Orientation(Vertex A, Vertex B, Vertex C) {
-
-    return 1;
+    double cross = CrossProduct(
+        {B.x - A.x, B.y - A.y},
+        {C.x - A.x, C.y - A.y}
+    );
+    if (std::abs(cross) < EPSILON) return 0;  // collinear
+    return (cross > 0) ? 1 : -1;              // 1=CCW, -1=CW
 }
 
 // ASPC
-Vertex ComputePointE(Line A, Line B) {
+// Refer to the Kronenfield paper for this
+Vertex ComputePointE(Vertex A, Vertex B, Vertex C, Vertex D) {
     
     return Vertex{};
 }
 
 double ArealDisplacement(Vertex A, Vertex B, Vertex C, Vertex D, Vertex E) {
-
-    return 0.0;
+     // areal displacement = area of symmetric difference between
+    // original path A->B->C->D and new path A->E->D
+    // = area of triangle ABE + area of triangle BCE + area of triangle CDE
+    // but signed, so we take absolute values
+    double t1 = TriangleArea(A, B, E);
+    double t2 = TriangleArea(B, C, E);
+    double t3 = TriangleArea(C, D, E);
+    return std::abs(t1) + std::abs(t2) + std::abs(t3);
 }

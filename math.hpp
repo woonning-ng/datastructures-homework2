@@ -28,9 +28,6 @@ double CrossProduct(Vector A, Vector B);
 // if lines are parallel. therefore it is encased in an optional
 std::optional<Vertex> LineIntersection(Line A, Line B);
 
-// should only be used in ComputePointE
-bool DoLinesIntersect(Line A, Line B);
-
 
 // -- POLYGON RELATED OPERATIONS -- 
 // signed area - shoelace method, sign tells orientation
@@ -54,7 +51,7 @@ bool PointOnSegment(Vertex P, Line seg);
 int Orientation(Vertex A, Vertex B, Vertex C);
 
 // ASPC
-Vertex ComputePointE(Line A, Line B);
+Vertex ComputePointE(Vertex A, Vertex B, Vertex C, Vertex D);
 double ArealDisplacement(Vertex A, Vertex B, Vertex C, Vertex D, Vertex E);
 
 
