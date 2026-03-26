@@ -157,29 +157,29 @@ double ArealDisplacement(Vertex A, Vertex B, Vertex C, Vertex D, Vertex E) {
 // distance functions
 // for checking how close E lands to other rings
 double DistancePointToSegment(Vertex P, Line seg) {
-    
+    return 0.0;
 }
 
 double DistancePointToPoint(Vertex A, Vertex B) {
-    
+    return 0.0;
 }
 
 // point containment - critical for hole checking
 // ray casting algorithm
 // checks if E lands inside a hole which would be topologically invalid
 bool PointInRing(Vertex P, std::vector<Vertex> ring) {
-    
+    return false;
 }
 
 // winding number - related to above
 // more robust than ray casting for edge cases
 int WindingNumber(Vertex P, std::vector<Vertex> ring) {
-    
+    return false;
 }
 
 // just SignedArea < 0 basically
 // but having it named explicitly makes the topology 
 // validation code much more readable
 bool IsRingClockwise(std::vector<Vertex> ring) {
-    
+    return false;
 }
