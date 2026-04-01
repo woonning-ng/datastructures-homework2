@@ -10,6 +10,9 @@ void Insert_Vertex(Vertex * first, Vertex * new_vert){
     new_vert->next = cur;
     cur->prev = new_vert;
     new_vert->prev = first;
+    TouchVertex(first);
+    TouchVertex(cur);
+    TouchVertex(new_vert);
 
 }
 
@@ -25,6 +28,10 @@ void Delete_Vertex(Vertex * vert){
 
     vert->prev = nullptr;
     vert->next = nullptr;
+    vert->active = false;
+    TouchVertex(prev);
+    TouchVertex(next);
+    TouchVertex(vert);
 }
 
 
@@ -41,6 +48,9 @@ void Set_RingList(std::map <int, std::vector<Vertex>> & poly_input){
         }
 
         if (sz == 1) {
+            vertices[0].ring_id = ring_id;
+            vertices[0].active = true;
+            vertices[0].version = 0;
             vertices[0].prev = &vertices[0];
             vertices[0].next = &vertices[0];
             rings_list[ring_id] = &vertices[0];
@@ -48,11 +58,20 @@ void Set_RingList(std::map <int, std::vector<Vertex>> & poly_input){
         }
 
         for (std::size_t id = 0; id < sz; ++id) {
+            vertices[id].ring_id = ring_id;
+            vertices[id].active = true;
+            vertices[id].version = 0;
             vertices[id].prev = &vertices[(id + sz - 1) % sz];
             vertices[id].next = &vertices[(id + 1) % sz];
         }
 
         rings_list[ring_id] = &vertices[0];
+    }
+}
+
+void TouchVertex(Vertex* vert) {
+    if (vert != nullptr) {
+        ++vert->version;
     }
 }
 

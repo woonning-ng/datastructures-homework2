@@ -8,7 +8,7 @@ CXXFLAGS = -std=c++23 -Wall -g
 TARGET = simplify
 
 # Source files
-SRC = main.cpp Helper.cpp math.cpp Polygon.cpp
+SRC = main.cpp Helper.cpp math.cpp Polygon.cpp Simplifier.cpp
 
 # Default rule
 all: $(TARGET)

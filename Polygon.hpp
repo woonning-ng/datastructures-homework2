@@ -12,6 +12,8 @@ struct Vertex{
         x = 0.0f;
         y = 0.0f;
         active = true;
+        version = 0;
+        ring_id = -1;
         prev = nullptr;
         next = nullptr;
     };
@@ -21,6 +23,8 @@ struct Vertex{
                         // vertices and we are using pointers to Vertices in
                         // lines, to avoid dangling pointers we can just set
                         // vertices to false
+    std::size_t version = 0; // increment whenever neighborhood/position changes
+    int ring_id = -1;
 
     // operator overloads
     Vertex operator+(const Vertex& other) const { return { x + other.x, y + other.y }; }
@@ -49,4 +53,5 @@ void Set_RingList(std::map <int, std::vector<Vertex>> & poly_input);
 void Print_RingList(std::map <int, Vertex*> const& rings_list, std::string file_path);
 void Insert_Vertex(Vertex * first, Vertex * new_vert);
 void Delete_Vertex(Vertex * vert);
+void TouchVertex(Vertex* vert);
 #endif
