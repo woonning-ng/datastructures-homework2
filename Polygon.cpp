@@ -76,13 +76,13 @@ void TouchVertex(Vertex* vert) {
 }
 
 
-void Print_RingList(const std::map<int, Vertex*>& rings_list, std::string file_path) {
+void Print_RingList(const std::map<int, Vertex*>& ring_heads, std::string file_path) {
     std::ofstream output(file_path);
     if (!output.is_open()) {
         std::cerr << "Output file path cannot open!\n";
         return;
     }
-    for (const auto& [ring_id, vertex] : rings_list) {
+    for (const auto& [ring_id, vertex] : ring_heads) {
         const Vertex* head = vertex;
         const Vertex* cur = head;
 

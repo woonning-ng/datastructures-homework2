@@ -4,6 +4,8 @@
 
 namespace {
 
+std::size_t g_next_candidate_sequence = 0;
+
 bool IsSameRing(const Vertex* a, const Vertex* b, const Vertex* c, const Vertex* d) {
     return a->ring_id == b->ring_id &&
            b->ring_id == c->ring_id &&
@@ -18,6 +20,9 @@ bool CollapseCandidateCompare::operator()(
 ) const {
     if (lhs.collapse.local_displacement != rhs.collapse.local_displacement) {
         return lhs.collapse.local_displacement > rhs.collapse.local_displacement;
+    }
+    if (lhs.sequence_number != rhs.sequence_number) {
+        return lhs.sequence_number > rhs.sequence_number;
     }
     return static_cast<int>(lhs.collapse.side) > static_cast<int>(rhs.collapse.side);
 }
@@ -52,17 +57,18 @@ std::optional<CollapseCandidate> BuildCandidate(
         return std::nullopt;
     }
 
-    return CollapseCandidate{
-        .a = a,
-        .b = b,
-        .c = c,
-        .d = d,
-        .collapse = *collapse,
-        .a_version = a->version,
-        .b_version = b->version,
-        .c_version = c->version,
-        .d_version = d->version,
-    };
+    CollapseCandidate candidate;
+    candidate.a = a;
+    candidate.b = b;
+    candidate.c = c;
+    candidate.d = d;
+    candidate.collapse = *collapse;
+    candidate.a_version = a->version;
+    candidate.b_version = b->version;
+    candidate.c_version = c->version;
+    candidate.d_version = d->version;
+    candidate.sequence_number = g_next_candidate_sequence++;
+    return candidate;
 }
 
 bool IsCandidateStillValid(const CollapseCandidate& candidate) {

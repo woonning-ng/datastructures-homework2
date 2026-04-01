@@ -1,11 +1,13 @@
-//Header file for helper functions such as reading of csv
+#ifndef HELPER_HPP
+#define HELPER_HPP
+
 #include "Polygon.hpp"
 
+#include <map>
+#include <string>
+#include <vector>
 
-//Return 1 if success and 0 if got error
-int Read_CSV(std::string file_path, 
-    std::map <int, std::vector<Vertex>>& poly);
+int Read_CSV(const std::string& file_path, std::map<int, std::vector<Vertex>>& poly);
+void Print_Poly(const std::string& file_path, const std::map<int, std::vector<Vertex>>& poly);
 
-//int Write_CSV(std::string file_path, std::map <int, std::vector<Vertex>> const & poly)
-
-void Print_Poly(std::string file_path, std::map <int, std::vector<Vertex>>const & poly);
+#endif

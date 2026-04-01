@@ -6,6 +6,7 @@
 #include <map>
 #include <optional>
 #include <queue>
+#include <cstddef>
 #include <vector>
 
 struct CollapseCandidate {
@@ -18,6 +19,7 @@ struct CollapseCandidate {
     std::size_t b_version = 0;
     std::size_t c_version = 0;
     std::size_t d_version = 0;
+    std::size_t sequence_number = 0;
 };
 
 struct CollapseCandidateCompare {

@@ -1,31 +1,21 @@
-# Compiler
-CXX = g++
+CXX ?= g++
+CXXFLAGS ?= -std=c++17 -O2 -Wall -Wextra -pedantic
+TARGET := simplify
+SRC := main.cpp Helper.cpp math.cpp Polygon.cpp Simplifier.cpp
+OBJ := $(SRC:.cpp=.o)
 
-# Compiler flags
-CXXFLAGS = -std=c++23 -Wall -g
+.PHONY: all clean run
 
-# Target executable
-TARGET = simplify
-
-# Source files
-SRC = main.cpp Helper.cpp math.cpp Polygon.cpp Simplifier.cpp
-
-# Default rule
 all: $(TARGET)
 
-# Build the executable
-$(TARGET): $(SRC)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
+$(TARGET): $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $@ $(OBJ)
 
-# ./simplify input_file output_file_for_checking
-# make run --> command to run this
-run:
-	./$(TARGET) test.csv output.csv output_ring.csv
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Run with valgrind
-valgrind: $(TARGET)
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(TARGET)
+run: $(TARGET)
+	./$(TARGET) test_cases/input_rectangle_with_two_holes_scaled.csv 11
 
-# Clean rule
 clean:
-	rm -f $(TARGET)
+	rm -f $(TARGET) $(OBJ)

@@ -1,82 +1,98 @@
 #include "Helper.hpp"
-#include <iostream>
+
+#include "math.hpp"
+
+#include <algorithm>
+#include <cctype>
 #include <fstream>
-#include <string>
-#include <vector>
-#include <map>
+#include <iostream>
+#include <sstream>
+#include <stdexcept>
 
-int Read_CSV(std::string file_path, std::map <int, std::vector<Vertex>>& poly){
-    std::ifstream ifs(file_path);
+namespace {
 
-    if(!ifs.is_open()){
+std::string Trim(const std::string& value) {
+    const auto first = std::find_if_not(value.begin(), value.end(), [](unsigned char ch) {
+        return std::isspace(ch) != 0;
+    });
+    const auto last = std::find_if_not(value.rbegin(), value.rend(), [](unsigned char ch) {
+        return std::isspace(ch) != 0;
+    }).base();
+
+    if (first >= last) {
+        return {};
+    }
+    return std::string(first, last);
+}
+
+bool SamePoint(const Vertex& lhs, const Vertex& rhs) {
+    return std::abs(lhs.x - rhs.x) <= EPSILON && std::abs(lhs.y - rhs.y) <= EPSILON;
+}
+
+} // namespace
+
+int Read_CSV(const std::string& file_path, std::map<int, std::vector<Vertex>>& poly) {
+    poly.clear();
+
+    std::ifstream input(file_path);
+    if (!input.is_open()) {
         std::cerr << "No such path exists\n";
-        ifs.close();
         return 0;
     }
-    std::string line{};
-    //Skip first line
-    std::getline(ifs, line);
 
-    while(std::getline(ifs, line)){
-        if(line.empty()){
-            break;
+    std::string line;
+    std::getline(input, line);
+
+    while (std::getline(input, line)) {
+        line = Trim(line);
+        if (line.empty()) {
+            continue;
         }
-        std::size_t pos{};
-        std::size_t cur_pos{};
-        int var = 0;
-        int ring_id{};
-       // int vertex_id{};
 
-        Vertex v;
-        while((pos = line.find(",", cur_pos)) != std::string::npos){
-            switch(var){
-                case 0:
-                //Ring Id
-                ring_id = std::stoi(line.substr(0, pos));
-                //std::cout << "Ring Id: " << ring_id;
-                break;
-
-                case 1:
-                //vertex_id = std::stoi(line.substr(cur_pos, pos - cur_pos));
-                //std::cout << " Vertex Id: " << vertex_id;
-                break;
-
-                case 2:
-                v.x = std::stof(line.substr(cur_pos, pos - cur_pos));
-                //std::cout << " X value: " << v.x;
-                break;
-
-            }
-            var++;
-            cur_pos = pos + 1;
+        std::stringstream row(line);
+        std::string field;
+        std::vector<std::string> fields;
+        while (std::getline(row, field, ',')) {
+            fields.push_back(Trim(field));
         }
-        v.y = std::stof(line.substr(cur_pos, line.size() - cur_pos));
-        //std::cout << " Y Value: " << v.y << std::endl;
-        
-        poly[ring_id].emplace_back(v);
-        
-        
-        
+
+        if (fields.size() != 4) {
+            std::cerr << "Malformed CSV row: " << line << "\n";
+            return 0;
+        }
+
+        try {
+            const int ring_id = std::stoi(fields[0]);
+            Vertex vertex;
+            vertex.x = std::stod(fields[2]);
+            vertex.y = std::stod(fields[3]);
+            poly[ring_id].push_back(vertex);
+        } catch (const std::exception&) {
+            std::cerr << "Malformed CSV row: " << line << "\n";
+            return 0;
+        }
     }
-    ifs.close();
+
+    for (auto& [ring_id, vertices] : poly) {
+        (void)ring_id;
+        if (vertices.size() >= 2 && SamePoint(vertices.front(), vertices.back())) {
+            vertices.pop_back();
+        }
+    }
+
     return 1;
 }
 
-
-void Print_Poly(std::string file_path, std::map <int, std::vector<Vertex>>const & poly){
-    std::ofstream ofs(file_path);
-    if(!ofs.is_open()){
-        std::cerr << "Output Check File cannot be opened!!/n";
-        ofs.close();
+void Print_Poly(const std::string& file_path, const std::map<int, std::vector<Vertex>>& poly) {
+    std::ofstream output(file_path);
+    if (!output.is_open()) {
+        std::cerr << "Output Check File cannot be opened!!\n";
         return;
     }
-    for(auto const &[key, val] : poly){
-        for(std::size_t i = 0; i < val.size(); i++){
-            ofs << key << "," << i << "," << val[i].x<< "," << val[i].y;
-            if(i < val.size() - 1){
-                ofs << std::endl;
-            }
+
+    for (const auto& [ring_id, ring] : poly) {
+        for (std::size_t i = 0; i < ring.size(); ++i) {
+            output << ring_id << "," << i << "," << ring[i].x << "," << ring[i].y << "\n";
         }
     }
-    ofs.close();
 }

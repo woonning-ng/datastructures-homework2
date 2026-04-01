@@ -4,18 +4,19 @@
 #include "math.hpp"
 
 #include <cmath>
+#include <limits>
 #include <vector>
 
 namespace {
 
-double SignedDoubleArea(const std::vector<Vertex>& polygon) {
-    if (polygon.size() < 3) {
+double SignedDoubleArea(const std::vector<Vertex>& vertices) {
+    if (vertices.size() < 3) {
         return 0.0;
     }
 
     double area = 0.0;
-    for (std::size_t i = 0; i < polygon.size(); ++i) {
-        area += Determinant(polygon[i], polygon[(i + 1) % polygon.size()]);
+    for (std::size_t i = 0; i < vertices.size(); ++i) {
+        area += Determinant(vertices[i], vertices[(i + 1) % vertices.size()]);
     }
     return area;
 }
@@ -53,11 +54,11 @@ std::optional<Vertex> InfiniteLineIntersection(
     return p1 + (r * t);
 }
 
-std::vector<Vertex> NormalizedCCWPolygon(std::vector<Vertex> polygon) {
-    if (SignedDoubleArea(polygon) < 0.0) {
-        std::reverse(polygon.begin(), polygon.end());
+std::vector<Vertex> NormalizedCCWPolygon(std::vector<Vertex> vertices) {
+    if (SignedDoubleArea(vertices) < 0.0) {
+        std::reverse(vertices.begin(), vertices.end());
     }
-    return polygon;
+    return vertices;
 }
 
 bool InsideHalfPlane(const Vertex& edge_start, const Vertex& edge_end, const Vertex& point) {
@@ -140,12 +141,6 @@ bool IsStrictlyBetter(const APSCCollapseResult& lhs, const APSCCollapseResult& r
 
 } // namespace
 
-// LINKS
-// https://www.geeksforgeeks.org/cpp/line-intersection-in-cpp/
-// https://stackoverflow.com/questions/20677795/how-do-i-compute-the-intersection-point-of-two-lines
-// https://www.101computing.net/the-shoelace-algorithm/
-
-// -- HELPERS --
 double Determinant(Vertex A, Vertex B) {
     return A.x * B.y - A.y * B.x;
 }
@@ -154,64 +149,47 @@ double Determinant(Line line) {
     return line.a->x * line.b->y - line.a->y * line.b->x;
 }
 
-// -- LINE RELATED OPERATIONS -- 
-
-// dot product
-// A.x * B.x + A.y * B.y
 double DotProduct(Vector A, Vector B) {
     return A.x * B.x + A.y * B.y;
 }
 
-// cross product
-// x = A.y * 0   - 0 * B.y = 0
-// y = 0 * B.x   - A.x * 0 = 0
-// z = A.x * B.y - A.y * B.x  -> this is the only surviving term
 double CrossProduct(Vector A, Vector B) {
     return A.x * B.y - A.y * B.x;
 }
 
-// line intersection - should not return anything proper
-// if lines are parallel. therefore it is encased in an optional
- std::optional<Vertex> LineIntersection(Line A, Line B) {
-     // guards in case the vertices are null for whatever
-     // reason
-     if (A.a == nullptr || A.b == nullptr || B.a == nullptr || B.b == nullptr) return std::nullopt;
+std::optional<Vertex> LineIntersection(Line A, Line B) {
+    if (A.a == nullptr || A.b == nullptr || B.a == nullptr || B.b == nullptr) {
+        return std::nullopt;
+    }
     return InfiniteLineIntersection(*A.a, *A.b, *B.a, *B.b);
 }
 
-// -- POLYGON RELATED OPERATIONS -- 
-// signed area - shoelace method, sign tells orientation
-// IMPORTANT: VERTICES MUST BE ENTERED IN ANTICLOCKWISE ORDER
 double SignedArea(std::vector<Vertex> poly, bool reverse) {
-    std::vector<Vertex> polygon = poly;
+    std::vector<Vertex> vertices = std::move(poly);
     if (reverse) {
-        std::reverse(polygon.begin(), polygon.end());
+        std::reverse(vertices.begin(), vertices.end());
     }
-    return SignedDoubleArea(polygon) * 0.5;
+    return SignedDoubleArea(vertices) * 0.5;
 }
 
-// Signed area = (AB x AC) / 2
 double TriangleArea(Vertex A, Vertex B, Vertex C) {
     return CrossProduct(B - A, C - A) / 2.0;
 }
 
-// topology checks
-// should be used everywhere else intopology checks
-// DoLinesIntersect  -> only fails if lines are PARALLEL (direction vectors same)
-// SegmentsIntersect -> fails if parallel OR if intersection point is outside both segments
-// lines - infinite line, segment - has end points
 bool SegmentsIntersect(Line A, Line B) {
-    if (A.a == nullptr || A.b == nullptr || B.a == nullptr || B.b == nullptr) return false;
+    if (A.a == nullptr || A.b == nullptr || B.a == nullptr || B.b == nullptr) {
+        return false;
+    }
 
-    int d1 = Orientation(*B.a, *B.b, *A.a);
-    int d2 = Orientation(*B.a, *B.b, *A.b);
-    int d3 = Orientation(*A.a, *A.b, *B.a);
-    int d4 = Orientation(*A.a, *A.b, *B.b);
+    const int d1 = Orientation(*B.a, *B.b, *A.a);
+    const int d2 = Orientation(*B.a, *B.b, *A.b);
+    const int d3 = Orientation(*A.a, *A.b, *B.a);
+    const int d4 = Orientation(*A.a, *A.b, *B.b);
 
-    // general case
-    if (d1 != d2 && d3 != d4) return true;
+    if (d1 != d2 && d3 != d4) {
+        return true;
+    }
 
-    // collinear edge cases
     if (d1 == 0 && PointOnSegment(*A.a, B)) return true;
     if (d2 == 0 && PointOnSegment(*A.b, B)) return true;
     if (d3 == 0 && PointOnSegment(*B.a, A)) return true;
@@ -224,28 +202,31 @@ bool IsCollinear(Vertex A, Vertex B, Vertex C) {
     return Orientation(A, B, C) == 0;
 }
 
-// edge case in intersection checks
 bool PointOnSegment(Vertex P, Line seg) {
-    // P must be collinear with segment AND within the bounding box
-    if (!IsCollinear(*seg.a, P, *seg.b)) return false;
+    if (seg.a == nullptr || seg.b == nullptr) {
+        return false;
+    }
+    if (!IsCollinear(*seg.a, P, *seg.b)) {
+        return false;
+    }
 
-    return std::min(seg.a->x, seg.b->x) <= P.x && P.x <= std::max(seg.a->x, seg.b->x) &&
-    std::min(seg.a->y, seg.b->y) <= P.y && P.y <= std::max(seg.a->y, seg.b->y);
+    return std::min(seg.a->x, seg.b->x) - EPSILON <= P.x &&
+           P.x <= std::max(seg.a->x, seg.b->x) + EPSILON &&
+           std::min(seg.a->y, seg.b->y) - EPSILON <= P.y &&
+           P.y <= std::max(seg.a->y, seg.b->y) + EPSILON;
 }
 
-// orientation check
-// returns -1, 0, 1 for clockwise, collinear, counterclockwise
-// can be used in winding checks and intersection logic
 int Orientation(Vertex A, Vertex B, Vertex C) {
-    double cross = CrossProduct(
+    const double cross = CrossProduct(
         {B.x - A.x, B.y - A.y},
         {C.x - A.x, C.y - A.y}
     );
-    if (std::abs(cross) < EPSILON) return 0;  // collinear
-    return (cross > 0) ? 1 : -1;              // 1=CCW, -1=CW
+    if (std::abs(cross) < EPSILON) {
+        return 0;
+    }
+    return (cross > 0) ? 1 : -1;
 }
 
-// APSC local geometry core
 std::optional<Vertex> ComputeAreaPreservingPointE(
     const Vertex& A,
     const Vertex& B,
@@ -310,11 +291,10 @@ std::optional<APSCCollapseResult> ComputeBestAPSCReplacement(
             continue;
         }
 
-        APSCCollapseResult candidate{
-            .point = *point,
-            .local_displacement = ComputeLocalArealDisplacement(A, B, C, D, *point, side),
-            .side = side,
-        };
+        APSCCollapseResult candidate;
+        candidate.point = *point;
+        candidate.local_displacement = ComputeLocalArealDisplacement(A, B, C, D, *point, side);
+        candidate.side = side;
 
         if (!best.has_value() || IsStrictlyBetter(candidate, *best)) {
             best = candidate;
@@ -335,32 +315,78 @@ const char* APSCPlacementSideName(APSCPlacementSide side) {
     }
 }
 
-// distance functions
-// for checking how close E lands to other rings
 double DistancePointToSegment(Vertex P, Line seg) {
-    return 0.0;
+    if (seg.a == nullptr || seg.b == nullptr) {
+        return std::numeric_limits<double>::infinity();
+    }
+
+    const Vector ab = *seg.b - *seg.a;
+    const Vector ap = P - *seg.a;
+    const double denom = DotProduct(ab, ab);
+    if (denom <= EPSILON) {
+        return DistancePointToPoint(P, *seg.a);
+    }
+
+    const double t = std::clamp(DotProduct(ap, ab) / denom, 0.0, 1.0);
+    const Vertex projection = *seg.a + (ab * t);
+    return DistancePointToPoint(P, projection);
 }
 
 double DistancePointToPoint(Vertex A, Vertex B) {
-    return 0.0;
+    const double dx = A.x - B.x;
+    const double dy = A.y - B.y;
+    return std::sqrt(dx * dx + dy * dy);
 }
 
-// point containment - critical for hole checking
-// ray casting algorithm
-// checks if E lands inside a hole which would be topologically invalid
 bool PointInRing(Vertex P, std::vector<Vertex> ring) {
-    return false;
+    if (ring.size() < 3) {
+        return false;
+    }
+
+    bool inside = false;
+    for (std::size_t i = 0, j = ring.size() - 1; i < ring.size(); j = i++) {
+        Line edge{&ring[j], &ring[i]};
+        if (PointOnSegment(P, edge)) {
+            return true;
+        }
+
+        const bool intersects =
+            ((ring[i].y > P.y) != (ring[j].y > P.y)) &&
+            (P.x < (ring[j].x - ring[i].x) * (P.y - ring[i].y) / (ring[j].y - ring[i].y) + ring[i].x);
+
+        if (intersects) {
+            inside = !inside;
+        }
+    }
+    return inside;
 }
 
-// winding number - related to above
-// more robust than ray casting for edge cases
 int WindingNumber(Vertex P, std::vector<Vertex> ring) {
-    return false;
+    if (ring.size() < 3) {
+        return 0;
+    }
+
+    int winding_number = 0;
+    for (std::size_t i = 0; i < ring.size(); ++i) {
+        Vertex current = ring[i];
+        Vertex next = ring[(i + 1) % ring.size()];
+        Line edge{&current, &next};
+        if (PointOnSegment(P, edge)) {
+            return 1;
+        }
+
+        if (current.y <= P.y) {
+            if (next.y > P.y && Orientation(current, next, P) > 0) {
+                ++winding_number;
+            }
+        } else if (next.y <= P.y && Orientation(current, next, P) < 0) {
+            --winding_number;
+        }
+    }
+
+    return winding_number;
 }
 
-// just SignedArea < 0 basically
-// but having it named explicitly makes the topology 
-// validation code much more readable
 bool IsRingClockwise(std::vector<Vertex> ring) {
-    return false;
+    return SignedArea(std::move(ring)) < 0.0;
 }
