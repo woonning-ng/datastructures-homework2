@@ -1,0 +1,64 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='900' height='560' viewBox='0 0 900 560'>
+<rect width='100%' height='100%' fill='white'/>
+<text x='450' y='28' text-anchor='middle' font-size='20' font-family='Segoe UI'>Areal displacement vs target vertex count</text>
+<line x1='90' y1='480' x2='870' y2='480' stroke='black' stroke-width='1.5'/>
+<line x1='90' y1='50' x2='90' y2='480' stroke='black' stroke-width='1.5'/>
+<line x1='90' y1='480' x2='90' y2='486' stroke='black'/>
+<text x='90' y='504' text-anchor='middle' font-size='11' font-family='Segoe UI'>51</text>
+<line x1='246' y1='480' x2='246' y2='486' stroke='black'/>
+<text x='246' y='504' text-anchor='middle' font-size='11' font-family='Segoe UI'>98</text>
+<line x1='402' y1='480' x2='402' y2='486' stroke='black'/>
+<text x='402' y='504' text-anchor='middle' font-size='11' font-family='Segoe UI'>146</text>
+<line x1='558' y1='480' x2='558' y2='486' stroke='black'/>
+<text x='558' y='504' text-anchor='middle' font-size='11' font-family='Segoe UI'>193</text>
+<line x1='714' y1='480' x2='714' y2='486' stroke='black'/>
+<text x='714' y='504' text-anchor='middle' font-size='11' font-family='Segoe UI'>241</text>
+<line x1='870' y1='480' x2='870' y2='486' stroke='black'/>
+<text x='870' y='504' text-anchor='middle' font-size='11' font-family='Segoe UI'>288</text>
+<line x1='84' y1='480' x2='90' y2='480' stroke='black'/>
+<text x='80' y='484' text-anchor='end' font-size='11' font-family='Segoe UI'>0.00</text>
+<line x1='84' y1='394' x2='90' y2='394' stroke='black'/>
+<text x='80' y='398' text-anchor='end' font-size='11' font-family='Segoe UI'>732.44</text>
+<line x1='84' y1='308' x2='90' y2='308' stroke='black'/>
+<text x='80' y='312' text-anchor='end' font-size='11' font-family='Segoe UI'>1,464.88</text>
+<line x1='84' y1='222' x2='90' y2='222' stroke='black'/>
+<text x='80' y='226' text-anchor='end' font-size='11' font-family='Segoe UI'>2,197.32</text>
+<line x1='84' y1='136' x2='90' y2='136' stroke='black'/>
+<text x='80' y='140' text-anchor='end' font-size='11' font-family='Segoe UI'>2,929.77</text>
+<line x1='84' y1='50.0000000000001' x2='90' y2='50.0000000000001' stroke='black'/>
+<text x='80' y='54.00000000000006' text-anchor='end' font-size='11' font-family='Segoe UI'>3,662.21</text>
+<text x='450' y='545' text-anchor='middle' font-size='14' font-family='Segoe UI'>Target vertices</text>
+<text x='22' y='280' text-anchor='middle' transform='rotate(-90 22 280)' font-size='14' font-family='Segoe UI'>Average areal displacement</text>
+<path d='M 132.78481012658227,476.58913595295513 L 215.0632911392405,478.42547217416376 L 343.4177215189873,479.25135956504926 L 554.0506329113923,479.7222429392323 L 679.1139240506329,479.8871611874585' fill='none' stroke='#0b6e4f' stroke-width='2'/>
+<circle cx='132.784810126582' cy='476.589135952955' r='4' fill='#0b6e4f'/>
+<circle cx='215.063291139241' cy='478.425472174164' r='4' fill='#0b6e4f'/>
+<circle cx='343.417721518987' cy='479.251359565049' r='4' fill='#0b6e4f'/>
+<circle cx='554.050632911392' cy='479.722242939232' r='4' fill='#0b6e4f'/>
+<circle cx='679.113924050633' cy='479.887161187459' r='4' fill='#0b6e4f'/>
+<path d='M 90,89.09090909090912 L 90,89.09090909090912 L 90,89.09090909090912 L 90,89.09090909090912 L 122.91139240506328,308.97727272727275' fill='none' stroke='#7d4e99' stroke-width='2'/>
+<circle cx='90' cy='89.0909090909091' r='4' fill='#7d4e99'/>
+<circle cx='90' cy='89.0909090909091' r='4' fill='#7d4e99'/>
+<circle cx='90' cy='89.0909090909091' r='4' fill='#7d4e99'/>
+<circle cx='90' cy='89.0909090909091' r='4' fill='#7d4e99'/>
+<circle cx='122.911392405063' cy='308.977272727273' r='4' fill='#7d4e99'/>
+<path d='M 185.44303797468353,479.03252947129164 L 290.75949367088606,479.5270676078475 L 448.73417721518985,479.7972463197066 L 712.0253164556963,479.96113515097994 L 870,479.9939653139035' fill='none' stroke='#005f99' stroke-width='2'/>
+<circle cx='185.443037974684' cy='479.032529471292' r='4' fill='#005f99'/>
+<circle cx='290.759493670886' cy='479.527067607848' r='4' fill='#005f99'/>
+<circle cx='448.73417721519' cy='479.797246319707' r='4' fill='#005f99'/>
+<circle cx='712.025316455696' cy='479.96113515098' r='4' fill='#005f99'/>
+<circle cx='870' cy='479.993965313904' r='4' fill='#005f99'/>
+<path d='M 132.78481012658227,459.61543555144874 L 215.0632911392405,469.0264526209325 L 343.4177215189873,475.5438502946856 L 554.0506329113923,479.09069323752226 L 679.1139240506329,479.8785769868888' fill='none' stroke='#c84c09' stroke-width='2'/>
+<circle cx='132.784810126582' cy='459.615435551449' r='4' fill='#c84c09'/>
+<circle cx='215.063291139241' cy='469.026452620933' r='4' fill='#c84c09'/>
+<circle cx='343.417721518987' cy='475.543850294686' r='4' fill='#c84c09'/>
+<circle cx='554.050632911392' cy='479.090693237522' r='4' fill='#c84c09'/>
+<circle cx='679.113924050633' cy='479.878576986889' r='4' fill='#c84c09'/>
+<line x1='680' y1='60' x2='698' y2='60' stroke='#0b6e4f' stroke-width='3'/>
+<text x='705' y='64' font-size='12' font-family='Segoe UI'>convex_large_256</text>
+<line x1='680' y1='80' x2='698' y2='80' stroke='#7d4e99' stroke-width='3'/>
+<text x='705' y='84' font-size='12' font-family='Segoe UI'>many_holes_4x4</text>
+<line x1='680' y1='100' x2='698' y2='100' stroke='#005f99' stroke-width='3'/>
+<text x='705' y='104' font-size='12' font-family='Segoe UI'>near_collinear_320</text>
+<line x1='680' y1='120' x2='698' y2='120' stroke='#c84c09' stroke-width='3'/>
+<text x='705' y='124' font-size='12' font-family='Segoe UI'>wavy_boundary_256</text>
+</svg>
