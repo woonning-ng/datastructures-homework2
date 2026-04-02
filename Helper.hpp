@@ -9,5 +9,6 @@
 
 int Read_CSV(const std::string& file_path, std::map<int, std::vector<Vertex>>& poly);
 void Print_Poly(const std::string& file_path, const std::map<int, std::vector<Vertex>>& poly);
+std::vector<Vertex> NormalizeRingForOutput(Vertex* head);
 
 #endif

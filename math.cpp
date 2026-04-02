@@ -304,6 +304,159 @@ std::optional<APSCCollapseResult> ComputeBestAPSCReplacement(
     return best;
 }
 
+namespace {
+
+Vertex IntersectEStarWithLine(double a, double b, double c, const Vertex& p1, const Vertex& p2) {
+    const double dx = p2.x - p1.x;
+    const double dy = p2.y - p1.y;
+    const double denom = a * dx + b * dy;
+    if (std::abs(denom) < 1e-15) {
+        const Vertex mid{(p1.x + p2.x) * 0.5, (p1.y + p2.y) * 0.5};
+        const double n2 = a * a + b * b;
+        const double val = a * mid.x + b * mid.y + c;
+        return {mid.x - a * val / n2, mid.y - b * val / n2};
+    }
+    const double t = -(a * p1.x + b * p1.y + c) / denom;
+    return {p1.x + t * dx, p1.y + t * dy};
+}
+
+double TriArea(const Vertex& p1, const Vertex& p2, const Vertex& p3) {
+    return 0.5 * ((p2.x - p1.x) * (p3.y - p1.y) - (p3.x - p1.x) * (p2.y - p1.y));
+}
+
+double PolyArea(const std::vector<Vertex>& pts) {
+    if (pts.size() < 3) {
+        return 0.0;
+    }
+    long double acc = 0.0L;
+    for (std::size_t i = 0, n = pts.size(); i < n; ++i) {
+        const Vertex& a = pts[i];
+        const Vertex& b = pts[(i + 1) % n];
+        acc += static_cast<long double>(a.x) * static_cast<long double>(b.y) -
+               static_cast<long double>(b.x) * static_cast<long double>(a.y);
+    }
+    return std::abs(static_cast<double>(acc * 0.5L));
+}
+
+bool SegIntersectParams(
+    const Vertex& p1,
+    const Vertex& p2,
+    const Vertex& p3,
+    const Vertex& p4,
+    double& t,
+    double& s
+) {
+    const double dx12 = p2.x - p1.x;
+    const double dy12 = p2.y - p1.y;
+    const double dx34 = p4.x - p3.x;
+    const double dy34 = p4.y - p3.y;
+    const double denom = dx12 * dy34 - dy12 * dx34;
+    if (std::abs(denom) < 1e-15) {
+        return false;
+    }
+    const double dx13 = p3.x - p1.x;
+    const double dy13 = p3.y - p1.y;
+    t = (dx13 * dy34 - dy13 * dx34) / denom;
+    s = (dx13 * dy12 - dy13 * dx12) / denom;
+    const double eps = 1e-9;
+    return t >= -eps && t <= 1.0 + eps && s >= -eps && s <= 1.0 + eps;
+}
+
+} // namespace
+
+double ComputeProject2ArealDisplacement(
+    const Vertex& A,
+    const Vertex& B,
+    const Vertex& C,
+    const Vertex& D,
+    const Vertex& E
+) {
+    double t = 0.0;
+    double s = 0.0;
+    const double eps_cross = 1e-10;
+
+    if (SegIntersectParams(E, D, B, C, t, s)) {
+        if (!(t <= eps_cross || t >= 1.0 - eps_cross || s <= eps_cross || s >= 1.0 - eps_cross)) {
+            const Vertex I{E.x + t * (D.x - E.x), E.y + t * (D.y - E.y)};
+            const double a1 = TriArea(A, B, I) + TriArea(A, I, E);
+            const double a2 = TriArea(I, C, D) + TriArea(I, D, E);
+            return std::abs(a1) + std::abs(a2);
+        }
+    }
+
+    if (SegIntersectParams(A, E, B, C, t, s)) {
+        if (!(t <= eps_cross || t >= 1.0 - eps_cross || s <= eps_cross || s >= 1.0 - eps_cross)) {
+            const Vertex I{A.x + t * (E.x - A.x), A.y + t * (E.y - A.y)};
+            const double a1 = std::abs(TriArea(A, B, I));
+            const double a2 = std::abs(TriArea(I, C, D) + TriArea(I, D, E));
+            return a1 + a2;
+        }
+    }
+
+    if (SegIntersectParams(E, D, A, B, t, s)) {
+        if (!(t <= eps_cross || t >= 1.0 - eps_cross || s <= eps_cross || s >= 1.0 - eps_cross)) {
+            const Vertex I{E.x + t * (D.x - E.x), E.y + t * (D.y - E.y)};
+            const double a1 = std::abs(TriArea(A, I, E));
+            const double a2 = PolyArea({I, B, C, D, E});
+            return a1 + a2;
+        }
+    }
+
+    if (SegIntersectParams(A, E, C, D, t, s)) {
+        if (!(t <= eps_cross || t >= 1.0 - eps_cross || s <= eps_cross || s >= 1.0 - eps_cross)) {
+            const Vertex J{A.x + t * (E.x - A.x), A.y + t * (E.y - A.y)};
+            const double a1 = std::abs(TriArea(J, D, E));
+            const double a2 = PolyArea({A, B, C, J, E});
+            return a1 + a2;
+        }
+    }
+
+    const double area = Determinant(A, B) +
+                        Determinant(B, C) +
+                        Determinant(C, D) +
+                        Determinant(D, E) +
+                        Determinant(E, A);
+    const double shoelace_disp = std::abs(area) * 0.5;
+    const double alt1 = std::abs(TriArea(A, B, C) + TriArea(A, C, E)) + std::abs(TriArea(C, D, E));
+    const double alt2 = std::abs(TriArea(A, B, E)) +
+                        std::abs(TriArea(B, C, D) + TriArea(B, D, E));
+    const double alt3 = std::abs(TriArea(A, B, E)) + std::abs(TriArea(E, C, D));
+    return std::max(std::max(shoelace_disp, alt1), std::max(alt2, alt3));
+}
+
+Vertex ComputeProject2APSCPointE(
+    const Vertex& A,
+    const Vertex& B,
+    const Vertex& C,
+    const Vertex& D
+) {
+    const double a = D.y - A.y;
+    const double b = A.x - D.x;
+    const double c = -B.y * A.x +
+                     (A.y - C.y) * B.x +
+                     (B.y - D.y) * C.x +
+                     C.y * D.x;
+
+    const double adx = D.x - A.x;
+    const double ady = D.y - A.y;
+    const double ad2 = adx * adx + ady * ady;
+    if (ad2 < 1e-18) {
+        return {(B.x + C.x) * 0.5, (B.y + C.y) * 0.5};
+    }
+
+    const double val_a = a * A.x + b * A.y + c;
+    const double scale = std::abs(a) + std::abs(b) + 1.0;
+    if (std::abs(val_a) < 1e-10 * scale) {
+        return {(A.x + D.x) * 0.5, (A.y + D.y) * 0.5};
+    }
+
+    const Vertex eab = IntersectEStarWithLine(a, b, c, A, B);
+    const Vertex ecd = IntersectEStarWithLine(a, b, c, C, D);
+    const double dab = ComputeProject2ArealDisplacement(A, B, C, D, eab);
+    const double dcd = ComputeProject2ArealDisplacement(A, B, C, D, ecd);
+    return dab <= dcd ? eab : ecd;
+}
+
 const char* APSCPlacementSideName(APSCPlacementSide side) {
     switch (side) {
         case APSCPlacementSide::OnAB:

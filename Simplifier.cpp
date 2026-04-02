@@ -1,10 +1,9 @@
 #include "Simplifier.hpp"
 
+#include <cmath>
 #include <set>
 
 namespace {
-
-std::size_t g_next_candidate_sequence = 0;
 
 bool IsSameRing(const Vertex* a, const Vertex* b, const Vertex* c, const Vertex* d) {
     return a->ring_id == b->ring_id &&
@@ -18,13 +17,33 @@ bool CollapseCandidateCompare::operator()(
     const CollapseCandidate& lhs,
     const CollapseCandidate& rhs
 ) const {
-    if (lhs.collapse.local_displacement != rhs.collapse.local_displacement) {
-        return lhs.collapse.local_displacement > rhs.collapse.local_displacement;
+    const double eps = 1e-12;
+    const double diff = lhs.collapse.local_displacement - rhs.collapse.local_displacement;
+    if (std::fabs(diff) > eps) {
+        return diff > 0.0;  // Min-heap: smaller displacement has higher priority
     }
-    if (lhs.sequence_number != rhs.sequence_number) {
-        return lhs.sequence_number > rhs.sequence_number;
+
+    // Tie-breaking: smaller ring_id first
+    if (lhs.a->ring_id != rhs.a->ring_id) {
+        return lhs.a->ring_id > rhs.a->ring_id;
     }
-    return static_cast<int>(lhs.collapse.side) > static_cast<int>(rhs.collapse.side);
+
+    const int lhs_a = lhs.a ? lhs.a->original_vertex_id : -1;
+    const int lhs_b = lhs.b ? lhs.b->original_vertex_id : -1;
+    const int lhs_c = lhs.c ? lhs.c->original_vertex_id : -1;
+    const int lhs_d = lhs.d ? lhs.d->original_vertex_id : -1;
+
+    const int rhs_a = rhs.a ? rhs.a->original_vertex_id : -1;
+    const int rhs_b = rhs.b ? rhs.b->original_vertex_id : -1;
+    const int rhs_c = rhs.c ? rhs.c->original_vertex_id : -1;
+    const int rhs_d = rhs.d ? rhs.d->original_vertex_id : -1;
+
+    // Smaller vertex IDs have higher priority
+    if (lhs_b != rhs_b) return lhs_b > rhs_b;
+    if (lhs_c != rhs_c) return lhs_c > rhs_c;
+    if (lhs_a != rhs_a) return lhs_a > rhs_a;
+    if (lhs_d != rhs_d) return lhs_d > rhs_d;
+    return lhs.a > rhs.a;
 }
 
 bool CanFormCandidate(const Vertex* a, const Vertex* b, const Vertex* c, const Vertex* d) {
@@ -52,22 +71,22 @@ std::optional<CollapseCandidate> BuildCandidate(
         return std::nullopt;
     }
 
-    const std::optional<APSCCollapseResult> collapse = ComputeBestAPSCReplacement(*a, *b, *c, *d);
-    if (!collapse.has_value()) {
-        return std::nullopt;
-    }
-
     CollapseCandidate candidate;
     candidate.a = a;
     candidate.b = b;
     candidate.c = c;
     candidate.d = d;
-    candidate.collapse = *collapse;
+    
+    auto result = ComputeBestAPSCReplacement(*a, *b, *c, *d);
+    if (!result.has_value()) {
+        return std::nullopt;
+    }
+    
+    candidate.collapse = *result;
     candidate.a_version = a->version;
     candidate.b_version = b->version;
     candidate.c_version = c->version;
     candidate.d_version = d->version;
-    candidate.sequence_number = g_next_candidate_sequence++;
     return candidate;
 }
 
@@ -75,20 +94,17 @@ bool IsCandidateStillValid(const CollapseCandidate& candidate) {
     if (!CanFormCandidate(candidate.a, candidate.b, candidate.c, candidate.d)) {
         return false;
     }
-
-    if (candidate.a->version != candidate.a_version ||
-        candidate.b->version != candidate.b_version ||
-        candidate.c->version != candidate.c_version ||
-        candidate.d->version != candidate.d_version) {
-        return false;
-    }
-
-    return candidate.a->next == candidate.b &&
-           candidate.b->prev == candidate.a &&
-           candidate.b->next == candidate.c &&
-           candidate.c->prev == candidate.b &&
-           candidate.c->next == candidate.d &&
-           candidate.d->prev == candidate.c;
+    if (candidate.a->next != candidate.b) return false;
+    if (candidate.b->next != candidate.c) return false;
+    if (candidate.c->next != candidate.d) return false;
+    
+    // Add version checks
+    if (candidate.a->version != candidate.a_version) return false;
+    if (candidate.b->version != candidate.b_version) return false;
+    if (candidate.c->version != candidate.c_version) return false;
+    if (candidate.d->version != candidate.d_version) return false;
+    
+    return true;
 }
 
 void PushCandidateIfPossible(
@@ -109,15 +125,22 @@ void QueueLocalCandidatesAround(CollapseQueue& queue, Vertex* center) {
         return;
     }
 
-    Vertex* const p2 = center->prev ? center->prev->prev : nullptr;
-    Vertex* const p1 = center->prev;
-    Vertex* const n1 = center->next;
-    Vertex* const n2 = n1 ? n1->next : nullptr;
-    Vertex* const n3 = n2 ? n2->next : nullptr;
+    Vertex* start = center;
+    for (int i = 0; i < 3; ++i) {
+        if (!start->prev) {
+            return;
+        }
+        start = start->prev;
+    }
 
-    PushCandidateIfPossible(queue, p2, p1, center, n1);
-    PushCandidateIfPossible(queue, p1, center, n1, n2);
-    PushCandidateIfPossible(queue, center, n1, n2, n3);
+    for (int i = 0; i < 4; ++i) {
+        Vertex* const a = start;
+        Vertex* const b = a ? a->next : nullptr;
+        Vertex* const c = b ? b->next : nullptr;
+        Vertex* const d = c ? c->next : nullptr;
+        PushCandidateIfPossible(queue, a, b, c, d);
+        start = start->next;
+    }
 }
 
 CollapseQueue BuildInitialCollapseQueue(const std::map<int, Vertex*>& ring_heads) {
