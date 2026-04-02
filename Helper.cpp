@@ -63,9 +63,11 @@ int Read_CSV(const std::string& file_path, std::map<int, std::vector<Vertex>>& p
 
         try {
             const int ring_id = std::stoi(fields[0]);
+            const int vertex_id = std::stoi(fields[1]);
             Vertex vertex;
             vertex.x = std::stod(fields[2]);
             vertex.y = std::stod(fields[3]);
+            vertex.original_vertex_id = vertex_id;
             poly[ring_id].push_back(vertex);
         } catch (const std::exception&) {
             std::cerr << "Malformed CSV row: " << line << "\n";
@@ -95,4 +97,29 @@ void Print_Poly(const std::string& file_path, const std::map<int, std::vector<Ve
             output << ring_id << "," << i << "," << ring[i].x << "," << ring[i].y << "\n";
         }
     }
+}
+
+std::vector<Vertex> NormalizeRingForOutput(Vertex* head) {
+    std::vector<Vertex> ring;
+    if (!head) {
+        return ring;
+    }
+
+    // Collect all vertices in their current order
+    Vertex* current = head;
+    do {
+        ring.push_back(*current);
+        current = current->next;
+    } while (current != head);
+
+    if (ring.empty()) {
+        return ring;
+    }
+
+    // Remove duplicate closing vertex if present
+    if (ring.size() >= 2 && SamePoint(ring.front(), ring.back())) {
+        ring.pop_back();
+    }
+    
+    return ring;
 }

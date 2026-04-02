@@ -85,6 +85,21 @@ std::optional<APSCCollapseResult> ComputeBestAPSCReplacement(
     const Vertex& D
 );
 
+Vertex ComputeProject2APSCPointE(
+    const Vertex& A,
+    const Vertex& B,
+    const Vertex& C,
+    const Vertex& D
+);
+
+double ComputeProject2ArealDisplacement(
+    const Vertex& A,
+    const Vertex& B,
+    const Vertex& C,
+    const Vertex& D,
+    const Vertex& E
+);
+
 const char* APSCPlacementSideName(APSCPlacementSide side);
 
 // distance functions
