@@ -1,6 +1,7 @@
 CXX ?= g++
 CXXFLAGS ?= -std=c++17 -O2 -Wall -Wextra -pedantic
 SHELL := bash
+PWSH ?= powershell.exe -NoProfile -ExecutionPolicy Bypass
 TARGET := simplify
 SRC := main.cpp Helper.cpp math.cpp Polygon.cpp Simplifier.cpp SpatialGrid.cpp
 OBJ := $(SRC:.cpp=.o)
@@ -18,13 +19,13 @@ $(TARGET): $(OBJ)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 generate: $(TARGET)
-	NO_BUILD=1 bash scripts/GenerateOutputs.sh $(TIMEOUT_SECONDS)
+	$(PWSH) -File scripts/GenerateOutputs.ps1 -NoBuild -TimeoutSeconds $(TIMEOUT_SECONDS)
 
 compare:
-	bash scripts/CompareOutputs.sh $(DIFF_LINES)
+	$(PWSH) -File scripts/CompareOutputs.ps1 -DiffLines $(DIFF_LINES)
 
 test: $(TARGET)
-	NO_BUILD=1 bash scripts/RunTests.sh $(TIMEOUT_SECONDS) $(DIFF_LINES)
+	$(PWSH) -File scripts/RunTests.ps1 -NoBuild -TimeoutSeconds $(TIMEOUT_SECONDS) -DiffLines $(DIFF_LINES)
 
 run: test
 

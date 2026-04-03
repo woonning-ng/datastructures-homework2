@@ -1,0 +1,1 @@
+//Header file for helper functions such as reading of csv#include "Polygon.hpp"//Return 1 if success and 0 if got errorint Read_CSV(std::string file_path,     std::map <int, std::vector<Vertex>>& poly);//int Write_CSV(std::string file_path, std::map <int, std::vector<Vertex>> const & poly)void Print_Poly(std::string file_path, std::map <int, std::vector<Vertex>>const & poly);
