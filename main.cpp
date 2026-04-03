@@ -507,37 +507,37 @@ static bool infer_target_vertices(const std::string& filepath, int& out_target) 
     return true;
 }
 
-static bool try_read_golden_output(const std::string& filepath, std::string& out) {
-    namespace fs = std::filesystem;
-    const fs::path in_path(filepath);
-    const std::string base = in_path.filename().string();
+// static bool try_read_golden_output(const std::string& filepath, std::string& out) {
+//     namespace fs = std::filesystem;
+//     const fs::path in_path(filepath);
+//     const std::string base = in_path.filename().string();
     
-    // Check if we are in a test_cases directory or looking at a file named input_...
-    if (base.rfind("input_", 0) != 0)
-        return false;
+//     // Check if we are in a test_cases directory or looking at a file named input_...
+//     if (base.rfind("input_", 0) != 0)
+//         return false;
 
-    std::string expected_base = base;
-    expected_base.replace(0, 6, "output_");
-    if (expected_base.size() >= 4 && expected_base.substr(expected_base.size() - 4) == ".csv")
-        expected_base.replace(expected_base.size() - 4, 4, ".txt");
-    else if (expected_base.size() < 4 || expected_base.substr(expected_base.size() - 4) != ".txt")
-        expected_base += ".txt";
+//     std::string expected_base = base;
+//     expected_base.replace(0, 6, "output_");
+//     if (expected_base.size() >= 4 && expected_base.substr(expected_base.size() - 4) == ".csv")
+//         expected_base.replace(expected_base.size() - 4, 4, ".txt");
+//     else if (expected_base.size() < 4 || expected_base.substr(expected_base.size() - 4) != ".txt")
+//         expected_base += ".txt";
 
-    fs::path out_path = in_path.parent_path() / expected_base;
+//     fs::path out_path = in_path.parent_path() / expected_base;
     
-    // If parent_path is empty, try looking in test_cases/
-    if (out_path == expected_base) {
-        out_path = fs::path("test_cases") / expected_base;
-    }
+//     // If parent_path is empty, try looking in test_cases/
+//     if (out_path == expected_base) {
+//         out_path = fs::path("test_cases") / expected_base;
+//     }
 
-    std::ifstream f(out_path, std::ios::in | std::ios::binary);
-    if (!f.is_open())
-        return false;
-    std::ostringstream buf;
-    buf << f.rdbuf();
-    out = buf.str();
-    return true;
-}
+//     std::ifstream f(out_path, std::ios::in | std::ios::binary);
+//     if (!f.is_open())
+//         return false;
+//     std::ostringstream buf;
+//     buf << f.rdbuf();
+//     out = buf.str();
+//     return true;
+// }
 
 int main(int argc, char* argv[]) {
 #ifdef _WIN32
@@ -565,10 +565,10 @@ int main(int argc, char* argv[]) {
     std::string golden;
     int inferred_target = 0;
     if (infer_target_vertices(input_file, inferred_target) &&
-        inferred_target == target_vertices &&
-        try_read_golden_output(input_file, golden))
+        inferred_target == target_vertices)
+        //try_read_golden_output(input_file, golden))
     {
-        std::cout << golden;
+        //std::cout << golden;
         return 0;
     }
 
