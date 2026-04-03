@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="720" viewBox="0 0 1120 720">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="110" y="42" font-size="28" font-family="Arial, sans-serif" font-weight="700" fill="#0f172a">Running Time vs Input Size</text>
+<text x="110" y="68" font-size="14" font-family="Arial, sans-serif" fill="#475569">Median of three runs, measured with target = input_vertices - 1 (log-log scale).</text>
+<rect x="110" y="90" width="970" height="540" fill="#ffffff" stroke="#cbd5e1"/>
+<line x1="110.00" y1="90" x2="110.00" y2="630" stroke="#e2e8f0"/>
+<text x="110.00" y="656" text-anchor="middle" font-size="13" font-family="Arial, sans-serif" fill="#334155">10^0</text>
+<line x1="271.67" y1="90" x2="271.67" y2="630" stroke="#e2e8f0"/>
+<text x="271.67" y="656" text-anchor="middle" font-size="13" font-family="Arial, sans-serif" fill="#334155">10^1</text>
+<line x1="433.33" y1="90" x2="433.33" y2="630" stroke="#e2e8f0"/>
+<text x="433.33" y="656" text-anchor="middle" font-size="13" font-family="Arial, sans-serif" fill="#334155">10^2</text>
+<line x1="595.00" y1="90" x2="595.00" y2="630" stroke="#e2e8f0"/>
+<text x="595.00" y="656" text-anchor="middle" font-size="13" font-family="Arial, sans-serif" fill="#334155">10^3</text>
+<line x1="756.67" y1="90" x2="756.67" y2="630" stroke="#e2e8f0"/>
+<text x="756.67" y="656" text-anchor="middle" font-size="13" font-family="Arial, sans-serif" fill="#334155">10^4</text>
+<line x1="918.33" y1="90" x2="918.33" y2="630" stroke="#e2e8f0"/>
+<text x="918.33" y="656" text-anchor="middle" font-size="13" font-family="Arial, sans-serif" fill="#334155">10^5</text>
+<line x1="1080.00" y1="90" x2="1080.00" y2="630" stroke="#e2e8f0"/>
+<text x="1080.00" y="656" text-anchor="middle" font-size="13" font-family="Arial, sans-serif" fill="#334155">10^6</text>
+<line x1="110" y1="630.00" x2="1080" y2="630.00" stroke="#e2e8f0"/>
+<text x="96" y="634.00" text-anchor="end" font-size="13" font-family="Arial, sans-serif" fill="#334155">10^-3</text>
+<line x1="110" y1="495.00" x2="1080" y2="495.00" stroke="#e2e8f0"/>
+<text x="96" y="499.00" text-anchor="end" font-size="13" font-family="Arial, sans-serif" fill="#334155">10^-2</text>
+<line x1="110" y1="360.00" x2="1080" y2="360.00" stroke="#e2e8f0"/>
+<text x="96" y="364.00" text-anchor="end" font-size="13" font-family="Arial, sans-serif" fill="#334155">10^-1</text>
+<line x1="110" y1="225.00" x2="1080" y2="225.00" stroke="#e2e8f0"/>
+<text x="96" y="229.00" text-anchor="end" font-size="13" font-family="Arial, sans-serif" fill="#334155">10^0</text>
+<line x1="110" y1="90.00" x2="1080" y2="90.00" stroke="#e2e8f0"/>
+<text x="96" y="94.00" text-anchor="end" font-size="13" font-family="Arial, sans-serif" fill="#334155">10^1</text>
+<text x="595.00" y="696" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">Input size (vertices)</text>
+<text x="26" y="360.00" transform="rotate(-90 26,360.00)" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">Running time (seconds)</text>
+<path d="M 256.00 524.30 L 281.38 516.32 L 306.76 508.33 L 332.14 500.35 L 357.52 492.37 L 382.90 484.39 L 408.28 476.40 L 433.66 468.42 L 459.04 460.44 L 484.42 452.46 L 509.80 444.47 L 535.18 436.49 L 560.56 428.51 L 585.94 420.53 L 611.32 412.54 L 636.70 404.56 L 662.08 396.58 L 687.46 388.60 L 712.84 380.61 L 738.22 372.63 L 763.60 364.65 L 788.98 356.67 L 814.36 348.68 L 839.74 340.70 L 865.12 332.72 L 890.50 324.74 L 915.88 316.75 L 941.26 308.77 L 966.64 300.79 L 992.02 292.81 L 1017.40 284.82" fill="none" stroke="#b91c1c" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="1072" y="110" text-anchor="end" font-size="13" font-family="Arial, sans-serif" fill="#b91c1c">fit: time ~= 2.77e-03 * n^0.38</text>
+<rect x="850" y="110" width="210" height="46" fill="#ffffff" stroke="#cbd5e1" rx="8"/>
+<circle cx="256.00" cy="492.41" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="256.00" cy="488.65" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="284.47" cy="496.45" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="284.47" cy="491.55" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="327.03" cy="500.86" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="327.03" cy="498.46" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="361.60" cy="499.16" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="374.08" cy="498.34" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="418.54" cy="488.91" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="638.57" cy="456.24" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="723.44" cy="411.55" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="728.89" cy="405.45" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="730.10" cy="404.79" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="746.12" cy="395.14" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="755.95" cy="392.32" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="760.73" cy="388.65" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="780.90" cy="371.20" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="897.72" cy="279.24" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="1017.40" cy="176.51" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<line x1="864" y1="134" x2="888" y2="134" stroke="#0f766e" stroke-width="2.5"/>
+<circle cx="876" cy="134" r="4.5" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<text x="898" y="139" font-size="13" font-family="Arial, sans-serif" fill="#0f172a">Measured datasets</text>
+</svg>
