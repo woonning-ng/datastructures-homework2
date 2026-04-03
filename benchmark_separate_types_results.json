@@ -1,0 +1,738 @@
+{
+  "meta": {
+    "executable": "./simplify",
+    "scaling_ratio": 0.5,
+    "repeats": 5,
+    "groups": {
+      "comb": [
+        "our_test_cases/test_comb_teeth_50.csv",
+        "our_test_cases/test_comb_teeth_100.csv",
+        "our_test_cases/test_comb_teeth_200.csv",
+        "our_test_cases/test_comb_teeth_400.csv",
+        "our_test_cases/test_comb_teeth_800.csv",
+        "our_test_cases/test_comb_teeth_1600.csv"
+      ],
+      "hole_graze": [
+        "our_test_cases/test_hole_graze_20.csv",
+        "our_test_cases/test_hole_graze_40.csv",
+        "our_test_cases/test_hole_graze_80.csv",
+        "our_test_cases/test_hole_graze_160.csv",
+        "our_test_cases/test_hole_graze_320.csv"
+      ],
+      "corridor": [
+        "our_test_cases/test_corridor_20.csv",
+        "our_test_cases/test_corridor_40.csv",
+        "our_test_cases/test_corridor_80.csv",
+        "our_test_cases/test_corridor_160.csv",
+        "our_test_cases/test_corridor_320.csv"
+      ],
+      "two_close_holes": [
+        "our_test_cases/test_twoholes_20.csv",
+        "our_test_cases/test_twoholes_40.csv",
+        "our_test_cases/test_twoholes_80.csv",
+        "our_test_cases/test_twoholes_160.csv",
+        "our_test_cases/test_twoholes_320.csv"
+      ]
+    },
+    "displacement_group": "comb",
+    "displacement_file": "our_test_cases/test_comb_teeth_1600.csv"
+  },
+  "rows": [
+    {
+      "experiment": "displacement",
+      "group": "comb",
+      "dataset": "test_comb_teeth_1600",
+      "input_file": "our_test_cases/test_comb_teeth_1600.csv",
+      "input_vertices": 6403,
+      "target_vertices": 3202,
+      "target_ratio": 0.500078,
+      "output_vertices": 3202,
+      "runtime_ms": 487.155985,
+      "peak_memory_kb": 11552.8,
+      "areal_displacement": 1326.791,
+      "input_area": 4800.0,
+      "output_area": 4800.0,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "comb",
+      "dataset": "test_comb_teeth_1600",
+      "input_file": "our_test_cases/test_comb_teeth_1600.csv",
+      "input_vertices": 6403,
+      "target_vertices": 3842,
+      "target_ratio": 0.600031,
+      "output_vertices": 3842,
+      "runtime_ms": 430.83149,
+      "peak_memory_kb": 11508.0,
+      "areal_displacement": 1060.875,
+      "input_area": 4800.0,
+      "output_area": 4800.0,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "comb",
+      "dataset": "test_comb_teeth_1600",
+      "input_file": "our_test_cases/test_comb_teeth_1600.csv",
+      "input_vertices": 6403,
+      "target_vertices": 4482,
+      "target_ratio": 0.699984,
+      "output_vertices": 4482,
+      "runtime_ms": 359.68167,
+      "peak_memory_kb": 9754.4,
+      "areal_displacement": 795.7779,
+      "input_area": 4800.0,
+      "output_area": 4800.0,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "comb",
+      "dataset": "test_comb_teeth_1600",
+      "input_file": "our_test_cases/test_comb_teeth_1600.csv",
+      "input_vertices": 6403,
+      "target_vertices": 5122,
+      "target_ratio": 0.799938,
+      "output_vertices": 5122,
+      "runtime_ms": 292.277667,
+      "peak_memory_kb": 8986.4,
+      "areal_displacement": 530.6812,
+      "input_area": 4800.0,
+      "output_area": 4800.0,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "comb",
+      "dataset": "test_comb_teeth_1600",
+      "input_file": "our_test_cases/test_comb_teeth_1600.csv",
+      "input_vertices": 6403,
+      "target_vertices": 5763,
+      "target_ratio": 0.900047,
+      "output_vertices": 5763,
+      "runtime_ms": 204.211367,
+      "peak_memory_kb": 8474.4,
+      "areal_displacement": 265.1703,
+      "input_area": 4800.0,
+      "output_area": 4800.0,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "comb",
+      "dataset": "test_comb_teeth_100",
+      "input_file": "our_test_cases/test_comb_teeth_100.csv",
+      "input_vertices": 403,
+      "target_vertices": 202,
+      "target_ratio": 0.501241,
+      "output_vertices": 202,
+      "runtime_ms": 11.069601,
+      "peak_memory_kb": 4096.0,
+      "areal_displacement": 84.14994,
+      "input_area": 300.0,
+      "output_area": 300.0,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "comb",
+      "dataset": "test_comb_teeth_1600",
+      "input_file": "our_test_cases/test_comb_teeth_1600.csv",
+      "input_vertices": 6403,
+      "target_vertices": 3202,
+      "target_ratio": 0.500078,
+      "output_vertices": 3202,
+      "runtime_ms": 469.468341,
+      "peak_memory_kb": 11546.4,
+      "areal_displacement": 1326.791,
+      "input_area": 4800.0,
+      "output_area": 4800.0,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "comb",
+      "dataset": "test_comb_teeth_200",
+      "input_file": "our_test_cases/test_comb_teeth_200.csv",
+      "input_vertices": 803,
+      "target_vertices": 402,
+      "target_ratio": 0.500623,
+      "output_vertices": 402,
+      "runtime_ms": 19.884043,
+      "peak_memory_kb": 4352.0,
+      "areal_displacement": 166.9927,
+      "input_area": 600.0,
+      "output_area": 600.0,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "comb",
+      "dataset": "test_comb_teeth_400",
+      "input_file": "our_test_cases/test_comb_teeth_400.csv",
+      "input_vertices": 1603,
+      "target_vertices": 802,
+      "target_ratio": 0.500312,
+      "output_vertices": 802,
+      "runtime_ms": 56.918031,
+      "peak_memory_kb": 5017.6,
+      "areal_displacement": 332.6781,
+      "input_area": 1200.0,
+      "output_area": 1200.0,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "comb",
+      "dataset": "test_comb_teeth_50",
+      "input_file": "our_test_cases/test_comb_teeth_50.csv",
+      "input_vertices": 203,
+      "target_vertices": 102,
+      "target_ratio": 0.502463,
+      "output_vertices": 102,
+      "runtime_ms": 30.715553,
+      "peak_memory_kb": 3840.0,
+      "areal_displacement": 42.72859,
+      "input_area": 150.0,
+      "output_area": 150.0,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "comb",
+      "dataset": "test_comb_teeth_800",
+      "input_file": "our_test_cases/test_comb_teeth_800.csv",
+      "input_vertices": 3203,
+      "target_vertices": 1602,
+      "target_ratio": 0.500156,
+      "output_vertices": 1602,
+      "runtime_ms": 208.99983,
+      "peak_memory_kb": 6567.2,
+      "areal_displacement": 664.0489,
+      "input_area": 2400.0,
+      "output_area": 2400.0,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "corridor",
+      "dataset": "test_corridor_160",
+      "input_file": "our_test_cases/test_corridor_160.csv",
+      "input_vertices": 1274,
+      "target_vertices": 637,
+      "target_ratio": 0.5,
+      "output_vertices": 637,
+      "runtime_ms": 33.784822,
+      "peak_memory_kb": 4096.0,
+      "areal_displacement": 0.005767529,
+      "input_area": 8.599496,
+      "output_area": 8.599496,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "corridor",
+      "dataset": "test_corridor_20",
+      "input_file": "our_test_cases/test_corridor_20.csv",
+      "input_vertices": 154,
+      "target_vertices": 77,
+      "target_ratio": 0.5,
+      "output_vertices": 77,
+      "runtime_ms": 8.552972,
+      "peak_memory_kb": 3840.0,
+      "areal_displacement": 0.2338043,
+      "input_area": 8.56775,
+      "output_area": 8.56775,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "corridor",
+      "dataset": "test_corridor_320",
+      "input_file": "our_test_cases/test_corridor_320.csv",
+      "input_vertices": 2554,
+      "target_vertices": 1277,
+      "target_ratio": 0.5,
+      "output_vertices": 1277,
+      "runtime_ms": 103.268343,
+      "peak_memory_kb": 4556.8,
+      "areal_displacement": 0.001637943,
+      "input_area": 8.599874,
+      "output_area": 8.599874,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "corridor",
+      "dataset": "test_corridor_40",
+      "input_file": "our_test_cases/test_corridor_40.csv",
+      "input_vertices": 314,
+      "target_vertices": 157,
+      "target_ratio": 0.5,
+      "output_vertices": 157,
+      "runtime_ms": 9.841797,
+      "peak_memory_kb": 3840.0,
+      "areal_displacement": 0.07005579,
+      "input_area": 8.591937,
+      "output_area": 8.591937,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "corridor",
+      "dataset": "test_corridor_80",
+      "input_file": "our_test_cases/test_corridor_80.csv",
+      "input_vertices": 634,
+      "target_vertices": 317,
+      "target_ratio": 0.5,
+      "output_vertices": 317,
+      "runtime_ms": 13.911758,
+      "peak_memory_kb": 3840.0,
+      "areal_displacement": 0.02054052,
+      "input_area": 8.597984,
+      "output_area": 8.597984,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "hole_graze",
+      "dataset": "test_hole_graze_160",
+      "input_file": "our_test_cases/test_hole_graze_160.csv",
+      "input_vertices": 1274,
+      "target_vertices": 637,
+      "target_ratio": 0.5,
+      "output_vertices": 637,
+      "runtime_ms": 38.642083,
+      "peak_memory_kb": 4249.6,
+      "areal_displacement": 0.01718582,
+      "input_area": 51.97695,
+      "output_area": 51.97695,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "hole_graze",
+      "dataset": "test_hole_graze_20",
+      "input_file": "our_test_cases/test_hole_graze_20.csv",
+      "input_vertices": 154,
+      "target_vertices": 77,
+      "target_ratio": 0.5,
+      "output_vertices": 77,
+      "runtime_ms": 7.975555,
+      "peak_memory_kb": 3840.0,
+      "areal_displacement": 1.070584,
+      "input_area": 51.78507,
+      "output_area": 51.78508,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "hole_graze",
+      "dataset": "test_hole_graze_320",
+      "input_file": "our_test_cases/test_hole_graze_320.csv",
+      "input_vertices": 2554,
+      "target_vertices": 1277,
+      "target_ratio": 0.5,
+      "output_vertices": 1277,
+      "runtime_ms": 117.493382,
+      "peak_memory_kb": 4608.0,
+      "areal_displacement": 0.001011786,
+      "input_area": 51.97924,
+      "output_area": 51.97924,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "hole_graze",
+      "dataset": "test_hole_graze_40",
+      "input_file": "our_test_cases/test_hole_graze_40.csv",
+      "input_vertices": 314,
+      "target_vertices": 157,
+      "target_ratio": 0.5,
+      "output_vertices": 157,
+      "runtime_ms": 9.786063,
+      "peak_memory_kb": 3840.0,
+      "areal_displacement": 0.3233329,
+      "input_area": 51.93127,
+      "output_area": 51.93127,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "hole_graze",
+      "dataset": "test_hole_graze_80",
+      "input_file": "our_test_cases/test_hole_graze_80.csv",
+      "input_vertices": 634,
+      "target_vertices": 317,
+      "target_ratio": 0.5,
+      "output_vertices": 317,
+      "runtime_ms": 14.155394,
+      "peak_memory_kb": 3840.0,
+      "areal_displacement": 0.09431071,
+      "input_area": 51.96782,
+      "output_area": 51.96782,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "two_close_holes",
+      "dataset": "test_twoholes_160",
+      "input_file": "our_test_cases/test_twoholes_160.csv",
+      "input_vertices": 1911,
+      "target_vertices": 956,
+      "target_ratio": 0.500262,
+      "output_vertices": 956,
+      "runtime_ms": 68.581885,
+      "peak_memory_kb": 4352.0,
+      "areal_displacement": 0.02186903,
+      "input_area": 36.79784,
+      "output_area": 36.79784,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "two_close_holes",
+      "dataset": "test_twoholes_20",
+      "input_file": "our_test_cases/test_twoholes_20.csv",
+      "input_vertices": 231,
+      "target_vertices": 116,
+      "target_ratio": 0.502165,
+      "output_vertices": 116,
+      "runtime_ms": 9.080181,
+      "peak_memory_kb": 3840.0,
+      "areal_displacement": 0.9016366,
+      "input_area": 36.662,
+      "output_area": 36.662,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "two_close_holes",
+      "dataset": "test_twoholes_320",
+      "input_file": "our_test_cases/test_twoholes_320.csv",
+      "input_vertices": 3831,
+      "target_vertices": 1916,
+      "target_ratio": 0.500131,
+      "output_vertices": 1916,
+      "runtime_ms": 217.976392,
+      "peak_memory_kb": 4864.0,
+      "areal_displacement": 0.006409136,
+      "input_area": 36.79946,
+      "output_area": 36.79946,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "two_close_holes",
+      "dataset": "test_twoholes_40",
+      "input_file": "our_test_cases/test_twoholes_40.csv",
+      "input_vertices": 471,
+      "target_vertices": 236,
+      "target_ratio": 0.501062,
+      "output_vertices": 236,
+      "runtime_ms": 17.738275,
+      "peak_memory_kb": 3840.0,
+      "areal_displacement": 0.2652582,
+      "input_area": 36.7655,
+      "output_area": 36.7655,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "scaling",
+      "group": "two_close_holes",
+      "dataset": "test_twoholes_80",
+      "input_file": "our_test_cases/test_twoholes_80.csv",
+      "input_vertices": 951,
+      "target_vertices": 476,
+      "target_ratio": 0.500526,
+      "output_vertices": 476,
+      "runtime_ms": 23.612637,
+      "peak_memory_kb": 4096.0,
+      "areal_displacement": 0.1238111,
+      "input_area": 36.79137,
+      "output_area": 36.79137,
+      "repeats_used": 5
+    }
+  ],
+  "charts": {
+    "comb_runtime": {
+      "title": "Running time vs input size (comb)",
+      "x_label": "Input vertices",
+      "y_label": "Runtime (ms)",
+      "series": [
+        {
+          "name": "runtime_ms",
+          "x": [
+            203,
+            403,
+            803,
+            1603,
+            3203,
+            6403
+          ],
+          "y": [
+            30.715553,
+            11.069601,
+            19.884043,
+            56.918031,
+            208.99983,
+            469.468341
+          ],
+          "text": [
+            "test_comb_teeth_50",
+            "test_comb_teeth_100",
+            "test_comb_teeth_200",
+            "test_comb_teeth_400",
+            "test_comb_teeth_800",
+            "test_comb_teeth_1600"
+          ]
+        }
+      ]
+    },
+    "comb_memory": {
+      "title": "Peak memory vs input size (comb)",
+      "x_label": "Input vertices",
+      "y_label": "Peak memory (KB)",
+      "series": [
+        {
+          "name": "peak_memory_kb",
+          "x": [
+            203,
+            403,
+            803,
+            1603,
+            3203,
+            6403
+          ],
+          "y": [
+            3840.0,
+            4096.0,
+            4352.0,
+            5017.6,
+            6567.2,
+            11546.4
+          ],
+          "text": [
+            "test_comb_teeth_50",
+            "test_comb_teeth_100",
+            "test_comb_teeth_200",
+            "test_comb_teeth_400",
+            "test_comb_teeth_800",
+            "test_comb_teeth_1600"
+          ]
+        }
+      ]
+    },
+    "hole_graze_runtime": {
+      "title": "Running time vs input size (hole_graze)",
+      "x_label": "Input vertices",
+      "y_label": "Runtime (ms)",
+      "series": [
+        {
+          "name": "runtime_ms",
+          "x": [
+            154,
+            314,
+            634,
+            1274,
+            2554
+          ],
+          "y": [
+            7.975555,
+            9.786063,
+            14.155394,
+            38.642083,
+            117.493382
+          ],
+          "text": [
+            "test_hole_graze_20",
+            "test_hole_graze_40",
+            "test_hole_graze_80",
+            "test_hole_graze_160",
+            "test_hole_graze_320"
+          ]
+        }
+      ]
+    },
+    "hole_graze_memory": {
+      "title": "Peak memory vs input size (hole_graze)",
+      "x_label": "Input vertices",
+      "y_label": "Peak memory (KB)",
+      "series": [
+        {
+          "name": "peak_memory_kb",
+          "x": [
+            154,
+            314,
+            634,
+            1274,
+            2554
+          ],
+          "y": [
+            3840.0,
+            3840.0,
+            3840.0,
+            4249.6,
+            4608.0
+          ],
+          "text": [
+            "test_hole_graze_20",
+            "test_hole_graze_40",
+            "test_hole_graze_80",
+            "test_hole_graze_160",
+            "test_hole_graze_320"
+          ]
+        }
+      ]
+    },
+    "corridor_runtime": {
+      "title": "Running time vs input size (corridor)",
+      "x_label": "Input vertices",
+      "y_label": "Runtime (ms)",
+      "series": [
+        {
+          "name": "runtime_ms",
+          "x": [
+            154,
+            314,
+            634,
+            1274,
+            2554
+          ],
+          "y": [
+            8.552972,
+            9.841797,
+            13.911758,
+            33.784822,
+            103.268343
+          ],
+          "text": [
+            "test_corridor_20",
+            "test_corridor_40",
+            "test_corridor_80",
+            "test_corridor_160",
+            "test_corridor_320"
+          ]
+        }
+      ]
+    },
+    "corridor_memory": {
+      "title": "Peak memory vs input size (corridor)",
+      "x_label": "Input vertices",
+      "y_label": "Peak memory (KB)",
+      "series": [
+        {
+          "name": "peak_memory_kb",
+          "x": [
+            154,
+            314,
+            634,
+            1274,
+            2554
+          ],
+          "y": [
+            3840.0,
+            3840.0,
+            3840.0,
+            4096.0,
+            4556.8
+          ],
+          "text": [
+            "test_corridor_20",
+            "test_corridor_40",
+            "test_corridor_80",
+            "test_corridor_160",
+            "test_corridor_320"
+          ]
+        }
+      ]
+    },
+    "two_close_holes_runtime": {
+      "title": "Running time vs input size (two_close_holes)",
+      "x_label": "Input vertices",
+      "y_label": "Runtime (ms)",
+      "series": [
+        {
+          "name": "runtime_ms",
+          "x": [
+            231,
+            471,
+            951,
+            1911,
+            3831
+          ],
+          "y": [
+            9.080181,
+            17.738275,
+            23.612637,
+            68.581885,
+            217.976392
+          ],
+          "text": [
+            "test_twoholes_20",
+            "test_twoholes_40",
+            "test_twoholes_80",
+            "test_twoholes_160",
+            "test_twoholes_320"
+          ]
+        }
+      ]
+    },
+    "two_close_holes_memory": {
+      "title": "Peak memory vs input size (two_close_holes)",
+      "x_label": "Input vertices",
+      "y_label": "Peak memory (KB)",
+      "series": [
+        {
+          "name": "peak_memory_kb",
+          "x": [
+            231,
+            471,
+            951,
+            1911,
+            3831
+          ],
+          "y": [
+            3840.0,
+            3840.0,
+            4096.0,
+            4352.0,
+            4864.0
+          ],
+          "text": [
+            "test_twoholes_20",
+            "test_twoholes_40",
+            "test_twoholes_80",
+            "test_twoholes_160",
+            "test_twoholes_320"
+          ]
+        }
+      ]
+    },
+    "comb_displacement": {
+      "title": "Areal displacement vs target vertex count (test_comb_teeth_1600)",
+      "x_label": "Target vertices",
+      "y_label": "Areal displacement",
+      "series": [
+        {
+          "name": "areal_displacement",
+          "x": [
+            3202,
+            3842,
+            4482,
+            5122,
+            5763
+          ],
+          "y": [
+            1326.791,
+            1060.875,
+            795.7779,
+            530.6812,
+            265.1703
+          ]
+        }
+      ]
+    }
+  }
+}
