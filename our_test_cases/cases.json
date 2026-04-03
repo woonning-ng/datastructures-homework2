@@ -354,3 +354,64 @@ python csv_to_geojson.py test_comb_exterior.csv
     }
   ]
 }
+
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              10.0,
+              0.0
+            ],
+            [
+              10.0,
+              10.0
+            ],
+            [
+              0.0,
+              10.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              5.0,
+              9.9
+            ],
+            [
+              9.9,
+              5.0
+            ],
+            [
+              5.0,
+              0.1
+            ],
+            [
+              0.1,
+              5.0
+            ],
+            [
+              5.0,
+              9.9
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "source": "our_test_cases/output_holeext5.csv"
+      }
+    }
+  ]
+}
