@@ -1,0 +1,7 @@
+Scaling-fit summary
+===================
+Runtime graph setup: target = input_vertices - 1 for every dataset so the program
+performs a real collapse while avoiding the hardcoded golden-output shortcut.
+
+Runtime fit (power law): time ~= 2.772204e-03 * n^0.377
+Memory fit (power law): memory ~= 1.558090e+03 * n^0.233
