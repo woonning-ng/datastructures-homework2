@@ -4,7 +4,6 @@
 #include <set>
 
 namespace {
-
 bool IsSameRing(const Vertex* a, const Vertex* b, const Vertex* c, const Vertex* d) {
     return a->ring_id == b->ring_id &&
            b->ring_id == c->ring_id &&
@@ -20,10 +19,9 @@ bool CollapseCandidateCompare::operator()(
     const double eps = 1e-12;
     const double diff = lhs.collapse.local_displacement - rhs.collapse.local_displacement;
     if (std::fabs(diff) > eps) {
-        return diff > 0.0;  // Min-heap: smaller displacement has higher priority
+        return diff > 0.0;
     }
 
-    // Tie-breaking: smaller ring_id first
     if (lhs.a->ring_id != rhs.a->ring_id) {
         return lhs.a->ring_id > rhs.a->ring_id;
     }
@@ -38,7 +36,6 @@ bool CollapseCandidateCompare::operator()(
     const int rhs_c = rhs.c ? rhs.c->original_vertex_id : -1;
     const int rhs_d = rhs.d ? rhs.d->original_vertex_id : -1;
 
-    // Smaller vertex IDs have higher priority
     if (lhs_b != rhs_b) return lhs_b > rhs_b;
     if (lhs_c != rhs_c) return lhs_c > rhs_c;
     if (lhs_a != rhs_a) return lhs_a > rhs_a;
@@ -133,7 +130,7 @@ void QueueLocalCandidatesAround(CollapseQueue& queue, Vertex* center) {
         start = start->prev;
     }
 
-    for (int i = 0; i < 4; ++i) {
+    for (int i = 0; i < 5; ++i) {
         Vertex* const a = start;
         Vertex* const b = a ? a->next : nullptr;
         Vertex* const c = b ? b->next : nullptr;

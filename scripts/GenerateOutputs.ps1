@@ -8,5 +8,5 @@ $ErrorActionPreference = "Stop"
 
 . (Join-Path $PSScriptRoot "TestWorkflow.ps1")
 
-$exitCode = Invoke-GenerateOutputs -NoBuild:$NoBuild -TimeoutSeconds $TimeoutSeconds
-exit $exitCode
+$generateExit = Invoke-GenerateOutputs -NoBuild:$NoBuild -TimeoutSeconds $TimeoutSeconds
+exit $generateExit
