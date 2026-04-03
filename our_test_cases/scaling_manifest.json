@@ -1,0 +1,34 @@
+{
+  "scaling_cases": [
+    {
+      "file": "our_test_cases/test_comb_teeth_5.csv",
+      "teeth": 5,
+      "vertices": 22,
+      "description": "Comb exterior with 5 teeth for scaling experiments"
+    },
+    {
+      "file": "our_test_cases/test_comb_teeth_10.csv",
+      "teeth": 10,
+      "vertices": 42,
+      "description": "Comb exterior with 10 teeth for scaling experiments"
+    },
+    {
+      "file": "our_test_cases/test_comb_teeth_20.csv",
+      "teeth": 20,
+      "vertices": 82,
+      "description": "Comb exterior with 20 teeth for scaling experiments"
+    },
+    {
+      "file": "our_test_cases/test_comb_teeth_40.csv",
+      "teeth": 40,
+      "vertices": 162,
+      "description": "Comb exterior with 40 teeth for scaling experiments"
+    },
+    {
+      "file": "our_test_cases/test_comb_teeth_80.csv",
+      "teeth": 80,
+      "vertices": 322,
+      "description": "Comb exterior with 80 teeth for scaling experiments"
+    }
+  ]
+}

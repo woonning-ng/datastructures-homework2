@@ -1,0 +1,12 @@
+How to use these files
+
+1. Generate scalable comb cases:
+   python3 generate_comb_cases.py --out-dir generated_cases
+
+2. Build your project:
+   make
+
+3. Run the project benchmark:
+   python3 benchmark_project.py      --exe ./simplify      --scaling-inputs generated_cases/test_comb_teeth_5.csv generated_cases/test_comb_teeth_10.csv generated_cases/test_comb_teeth_20.csv generated_cases/test_comb_teeth_40.csv generated_cases/test_comb_teeth_80.csv      --stress-inputs test_hole_grazes_exterior.csv test_narrow_corridor.csv test_two_close_holes.csv      --repeats 5
+
+4. Open benchmark_project_viewer.html and load benchmark_project_results.json.
