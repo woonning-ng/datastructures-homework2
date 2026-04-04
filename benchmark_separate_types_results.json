@@ -2,6 +2,15 @@
   "meta": {
     "executable": "./simplify",
     "scaling_ratio": 0.5,
+    "displacement_ratios": [
+      0.9,
+      0.8,
+      0.7,
+      0.6,
+      0.5,
+      0.4,
+      0.3
+    ],
     "repeats": 5,
     "groups": {
       "comb": [
@@ -33,11 +42,41 @@
         "our_test_cases/test_twoholes_160.csv",
         "our_test_cases/test_twoholes_320.csv"
       ]
-    },
-    "displacement_group": "comb",
-    "displacement_file": "our_test_cases/test_comb_teeth_1600.csv"
+    }
   },
   "rows": [
+    {
+      "experiment": "displacement",
+      "group": "comb",
+      "dataset": "test_comb_teeth_1600",
+      "input_file": "our_test_cases/test_comb_teeth_1600.csv",
+      "input_vertices": 6403,
+      "target_vertices": 1921,
+      "target_ratio": 0.300016,
+      "output_vertices": 1921,
+      "runtime_ms": 1146.713465,
+      "peak_memory_kb": 11479.2,
+      "areal_displacement": 4425.835,
+      "input_area": 4800.0,
+      "output_area": 4800.0,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "comb",
+      "dataset": "test_comb_teeth_1600",
+      "input_file": "our_test_cases/test_comb_teeth_1600.csv",
+      "input_vertices": 6403,
+      "target_vertices": 2561,
+      "target_ratio": 0.399969,
+      "output_vertices": 2561,
+      "runtime_ms": 993.20137,
+      "peak_memory_kb": 11556.0,
+      "areal_displacement": 2865.829,
+      "input_area": 4800.0,
+      "output_area": 4800.0,
+      "repeats_used": 5
+    },
     {
       "experiment": "displacement",
       "group": "comb",
@@ -47,8 +86,8 @@
       "target_vertices": 3202,
       "target_ratio": 0.500078,
       "output_vertices": 3202,
-      "runtime_ms": 487.155985,
-      "peak_memory_kb": 11552.8,
+      "runtime_ms": 681.467766,
+      "peak_memory_kb": 11538.4,
       "areal_displacement": 1326.791,
       "input_area": 4800.0,
       "output_area": 4800.0,
@@ -63,8 +102,8 @@
       "target_vertices": 3842,
       "target_ratio": 0.600031,
       "output_vertices": 3842,
-      "runtime_ms": 430.83149,
-      "peak_memory_kb": 11508.0,
+      "runtime_ms": 603.733251,
+      "peak_memory_kb": 11564.8,
       "areal_displacement": 1060.875,
       "input_area": 4800.0,
       "output_area": 4800.0,
@@ -79,8 +118,8 @@
       "target_vertices": 4482,
       "target_ratio": 0.699984,
       "output_vertices": 4482,
-      "runtime_ms": 359.68167,
-      "peak_memory_kb": 9754.4,
+      "runtime_ms": 495.611953,
+      "peak_memory_kb": 9735.2,
       "areal_displacement": 795.7779,
       "input_area": 4800.0,
       "output_area": 4800.0,
@@ -95,8 +134,8 @@
       "target_vertices": 5122,
       "target_ratio": 0.799938,
       "output_vertices": 5122,
-      "runtime_ms": 292.277667,
-      "peak_memory_kb": 8986.4,
+      "runtime_ms": 401.444278,
+      "peak_memory_kb": 8974.4,
       "areal_displacement": 530.6812,
       "input_area": 4800.0,
       "output_area": 4800.0,
@@ -111,11 +150,347 @@
       "target_vertices": 5763,
       "target_ratio": 0.900047,
       "output_vertices": 5763,
-      "runtime_ms": 204.211367,
-      "peak_memory_kb": 8474.4,
+      "runtime_ms": 302.025774,
+      "peak_memory_kb": 8508.0,
       "areal_displacement": 265.1703,
       "input_area": 4800.0,
       "output_area": 4800.0,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "corridor",
+      "dataset": "test_corridor_320",
+      "input_file": "our_test_cases/test_corridor_320.csv",
+      "input_vertices": 2554,
+      "target_vertices": 766,
+      "target_ratio": 0.299922,
+      "output_vertices": 766,
+      "runtime_ms": 178.897357,
+      "peak_memory_kb": 4505.6,
+      "areal_displacement": 0.002289173,
+      "input_area": 8.599874,
+      "output_area": 8.599874,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "corridor",
+      "dataset": "test_corridor_320",
+      "input_file": "our_test_cases/test_corridor_320.csv",
+      "input_vertices": 2554,
+      "target_vertices": 1022,
+      "target_ratio": 0.400157,
+      "output_vertices": 1022,
+      "runtime_ms": 152.078112,
+      "peak_memory_kb": 4608.0,
+      "areal_displacement": 0.002023645,
+      "input_area": 8.599874,
+      "output_area": 8.599874,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "corridor",
+      "dataset": "test_corridor_320",
+      "input_file": "our_test_cases/test_corridor_320.csv",
+      "input_vertices": 2554,
+      "target_vertices": 1277,
+      "target_ratio": 0.5,
+      "output_vertices": 1277,
+      "runtime_ms": 153.655244,
+      "peak_memory_kb": 4608.0,
+      "areal_displacement": 0.001637943,
+      "input_area": 8.599874,
+      "output_area": 8.599874,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "corridor",
+      "dataset": "test_corridor_320",
+      "input_file": "our_test_cases/test_corridor_320.csv",
+      "input_vertices": 2554,
+      "target_vertices": 1532,
+      "target_ratio": 0.599843,
+      "output_vertices": 1532,
+      "runtime_ms": 142.302891,
+      "peak_memory_kb": 4608.0,
+      "areal_displacement": 0.001335257,
+      "input_area": 8.599874,
+      "output_area": 8.599874,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "corridor",
+      "dataset": "test_corridor_320",
+      "input_file": "our_test_cases/test_corridor_320.csv",
+      "input_vertices": 2554,
+      "target_vertices": 1788,
+      "target_ratio": 0.700078,
+      "output_vertices": 1788,
+      "runtime_ms": 111.528502,
+      "peak_memory_kb": 4608.0,
+      "areal_displacement": 0.0008743777,
+      "input_area": 8.599874,
+      "output_area": 8.599874,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "corridor",
+      "dataset": "test_corridor_320",
+      "input_file": "our_test_cases/test_corridor_320.csv",
+      "input_vertices": 2554,
+      "target_vertices": 2043,
+      "target_ratio": 0.799922,
+      "output_vertices": 2043,
+      "runtime_ms": 96.661545,
+      "peak_memory_kb": 4556.8,
+      "areal_displacement": 0.0007270417,
+      "input_area": 8.599874,
+      "output_area": 8.599874,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "corridor",
+      "dataset": "test_corridor_320",
+      "input_file": "our_test_cases/test_corridor_320.csv",
+      "input_vertices": 2554,
+      "target_vertices": 2299,
+      "target_ratio": 0.900157,
+      "output_vertices": 2299,
+      "runtime_ms": 69.532591,
+      "peak_memory_kb": 4352.0,
+      "areal_displacement": 0.0002938207,
+      "input_area": 8.599874,
+      "output_area": 8.599874,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "hole_graze",
+      "dataset": "test_hole_graze_320",
+      "input_file": "our_test_cases/test_hole_graze_320.csv",
+      "input_vertices": 2554,
+      "target_vertices": 766,
+      "target_ratio": 0.299922,
+      "output_vertices": 766,
+      "runtime_ms": 208.311531,
+      "peak_memory_kb": 4608.0,
+      "areal_displacement": 0.005301921,
+      "input_area": 51.97924,
+      "output_area": 51.97924,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "hole_graze",
+      "dataset": "test_hole_graze_320",
+      "input_file": "our_test_cases/test_hole_graze_320.csv",
+      "input_vertices": 2554,
+      "target_vertices": 1022,
+      "target_ratio": 0.400157,
+      "output_vertices": 1022,
+      "runtime_ms": 173.35745,
+      "peak_memory_kb": 4608.0,
+      "areal_displacement": 0.002559693,
+      "input_area": 51.97924,
+      "output_area": 51.97924,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "hole_graze",
+      "dataset": "test_hole_graze_320",
+      "input_file": "our_test_cases/test_hole_graze_320.csv",
+      "input_vertices": 2554,
+      "target_vertices": 1277,
+      "target_ratio": 0.5,
+      "output_vertices": 1277,
+      "runtime_ms": 155.316576,
+      "peak_memory_kb": 4608.0,
+      "areal_displacement": 0.001011786,
+      "input_area": 51.97924,
+      "output_area": 51.97924,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "hole_graze",
+      "dataset": "test_hole_graze_320",
+      "input_file": "our_test_cases/test_hole_graze_320.csv",
+      "input_vertices": 2554,
+      "target_vertices": 1532,
+      "target_ratio": 0.599843,
+      "output_vertices": 1532,
+      "runtime_ms": 127.797512,
+      "peak_memory_kb": 4608.0,
+      "areal_displacement": 4.270971e-06,
+      "input_area": 51.97924,
+      "output_area": 51.97924,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "hole_graze",
+      "dataset": "test_hole_graze_320",
+      "input_file": "our_test_cases/test_hole_graze_320.csv",
+      "input_vertices": 2554,
+      "target_vertices": 1788,
+      "target_ratio": 0.700078,
+      "output_vertices": 1788,
+      "runtime_ms": 116.0226,
+      "peak_memory_kb": 4608.0,
+      "areal_displacement": 1.247383e-06,
+      "input_area": 51.97924,
+      "output_area": 51.97924,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "hole_graze",
+      "dataset": "test_hole_graze_320",
+      "input_file": "our_test_cases/test_hole_graze_320.csv",
+      "input_vertices": 2554,
+      "target_vertices": 2043,
+      "target_ratio": 0.799922,
+      "output_vertices": 2043,
+      "runtime_ms": 87.966186,
+      "peak_memory_kb": 4608.0,
+      "areal_displacement": 1.454947e-13,
+      "input_area": 51.97924,
+      "output_area": 51.97924,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "hole_graze",
+      "dataset": "test_hole_graze_320",
+      "input_file": "our_test_cases/test_hole_graze_320.csv",
+      "input_vertices": 2554,
+      "target_vertices": 2299,
+      "target_ratio": 0.900157,
+      "output_vertices": 2299,
+      "runtime_ms": 69.035078,
+      "peak_memory_kb": 4352.0,
+      "areal_displacement": 1.3195e-13,
+      "input_area": 51.97924,
+      "output_area": 51.97924,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "two_close_holes",
+      "dataset": "test_twoholes_320",
+      "input_file": "our_test_cases/test_twoholes_320.csv",
+      "input_vertices": 3831,
+      "target_vertices": 1149,
+      "target_ratio": 0.299922,
+      "output_vertices": 1149,
+      "runtime_ms": 326.716251,
+      "peak_memory_kb": 4864.0,
+      "areal_displacement": 0.01106504,
+      "input_area": 36.79946,
+      "output_area": 36.79946,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "two_close_holes",
+      "dataset": "test_twoholes_320",
+      "input_file": "our_test_cases/test_twoholes_320.csv",
+      "input_vertices": 3831,
+      "target_vertices": 1532,
+      "target_ratio": 0.399896,
+      "output_vertices": 1532,
+      "runtime_ms": 301.900916,
+      "peak_memory_kb": 4864.0,
+      "areal_displacement": 0.01033821,
+      "input_area": 36.79946,
+      "output_area": 36.79946,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "two_close_holes",
+      "dataset": "test_twoholes_320",
+      "input_file": "our_test_cases/test_twoholes_320.csv",
+      "input_vertices": 3831,
+      "target_vertices": 1916,
+      "target_ratio": 0.500131,
+      "output_vertices": 1916,
+      "runtime_ms": 276.897523,
+      "peak_memory_kb": 4864.0,
+      "areal_displacement": 0.006409136,
+      "input_area": 36.79946,
+      "output_area": 36.79946,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "two_close_holes",
+      "dataset": "test_twoholes_320",
+      "input_file": "our_test_cases/test_twoholes_320.csv",
+      "input_vertices": 3831,
+      "target_vertices": 2299,
+      "target_ratio": 0.600104,
+      "output_vertices": 2299,
+      "runtime_ms": 259.406987,
+      "peak_memory_kb": 4864.0,
+      "areal_displacement": 0.004534076,
+      "input_area": 36.79946,
+      "output_area": 36.79946,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "two_close_holes",
+      "dataset": "test_twoholes_320",
+      "input_file": "our_test_cases/test_twoholes_320.csv",
+      "input_vertices": 3831,
+      "target_vertices": 2682,
+      "target_ratio": 0.700078,
+      "output_vertices": 2682,
+      "runtime_ms": 226.105865,
+      "peak_memory_kb": 4812.8,
+      "areal_displacement": 0.003344675,
+      "input_area": 36.79946,
+      "output_area": 36.79946,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "two_close_holes",
+      "dataset": "test_twoholes_320",
+      "input_file": "our_test_cases/test_twoholes_320.csv",
+      "input_vertices": 3831,
+      "target_vertices": 3065,
+      "target_ratio": 0.800052,
+      "output_vertices": 3065,
+      "runtime_ms": 164.379566,
+      "peak_memory_kb": 4608.0,
+      "areal_displacement": 0.002981209,
+      "input_area": 36.79946,
+      "output_area": 36.79946,
+      "repeats_used": 5
+    },
+    {
+      "experiment": "displacement",
+      "group": "two_close_holes",
+      "dataset": "test_twoholes_320",
+      "input_file": "our_test_cases/test_twoholes_320.csv",
+      "input_vertices": 3831,
+      "target_vertices": 3448,
+      "target_ratio": 0.900026,
+      "output_vertices": 3448,
+      "runtime_ms": 113.505417,
+      "peak_memory_kb": 4608.0,
+      "areal_displacement": 0.001452079,
+      "input_area": 36.79946,
+      "output_area": 36.79946,
       "repeats_used": 5
     },
     {
@@ -127,7 +502,7 @@
       "target_vertices": 202,
       "target_ratio": 0.501241,
       "output_vertices": 202,
-      "runtime_ms": 11.069601,
+      "runtime_ms": 30.682081,
       "peak_memory_kb": 4096.0,
       "areal_displacement": 84.14994,
       "input_area": 300.0,
@@ -143,8 +518,8 @@
       "target_vertices": 3202,
       "target_ratio": 0.500078,
       "output_vertices": 3202,
-      "runtime_ms": 469.468341,
-      "peak_memory_kb": 11546.4,
+      "runtime_ms": 703.799494,
+      "peak_memory_kb": 11547.2,
       "areal_displacement": 1326.791,
       "input_area": 4800.0,
       "output_area": 4800.0,
@@ -159,7 +534,7 @@
       "target_vertices": 402,
       "target_ratio": 0.500623,
       "output_vertices": 402,
-      "runtime_ms": 19.884043,
+      "runtime_ms": 46.302232,
       "peak_memory_kb": 4352.0,
       "areal_displacement": 166.9927,
       "input_area": 600.0,
@@ -175,8 +550,8 @@
       "target_vertices": 802,
       "target_ratio": 0.500312,
       "output_vertices": 802,
-      "runtime_ms": 56.918031,
-      "peak_memory_kb": 5017.6,
+      "runtime_ms": 95.912359,
+      "peak_memory_kb": 5068.8,
       "areal_displacement": 332.6781,
       "input_area": 1200.0,
       "output_area": 1200.0,
@@ -191,7 +566,7 @@
       "target_vertices": 102,
       "target_ratio": 0.502463,
       "output_vertices": 102,
-      "runtime_ms": 30.715553,
+      "runtime_ms": 34.524626,
       "peak_memory_kb": 3840.0,
       "areal_displacement": 42.72859,
       "input_area": 150.0,
@@ -207,8 +582,8 @@
       "target_vertices": 1602,
       "target_ratio": 0.500156,
       "output_vertices": 1602,
-      "runtime_ms": 208.99983,
-      "peak_memory_kb": 6567.2,
+      "runtime_ms": 301.140085,
+      "peak_memory_kb": 6508.0,
       "areal_displacement": 664.0489,
       "input_area": 2400.0,
       "output_area": 2400.0,
@@ -223,7 +598,7 @@
       "target_vertices": 637,
       "target_ratio": 0.5,
       "output_vertices": 637,
-      "runtime_ms": 33.784822,
+      "runtime_ms": 63.846279,
       "peak_memory_kb": 4096.0,
       "areal_displacement": 0.005767529,
       "input_area": 8.599496,
@@ -239,7 +614,7 @@
       "target_vertices": 77,
       "target_ratio": 0.5,
       "output_vertices": 77,
-      "runtime_ms": 8.552972,
+      "runtime_ms": 23.550574,
       "peak_memory_kb": 3840.0,
       "areal_displacement": 0.2338043,
       "input_area": 8.56775,
@@ -255,8 +630,8 @@
       "target_vertices": 1277,
       "target_ratio": 0.5,
       "output_vertices": 1277,
-      "runtime_ms": 103.268343,
-      "peak_memory_kb": 4556.8,
+      "runtime_ms": 158.863015,
+      "peak_memory_kb": 4608.0,
       "areal_displacement": 0.001637943,
       "input_area": 8.599874,
       "output_area": 8.599874,
@@ -271,7 +646,7 @@
       "target_vertices": 157,
       "target_ratio": 0.5,
       "output_vertices": 157,
-      "runtime_ms": 9.841797,
+      "runtime_ms": 29.383076,
       "peak_memory_kb": 3840.0,
       "areal_displacement": 0.07005579,
       "input_area": 8.591937,
@@ -287,7 +662,7 @@
       "target_vertices": 317,
       "target_ratio": 0.5,
       "output_vertices": 317,
-      "runtime_ms": 13.911758,
+      "runtime_ms": 43.981785,
       "peak_memory_kb": 3840.0,
       "areal_displacement": 0.02054052,
       "input_area": 8.597984,
@@ -303,8 +678,8 @@
       "target_vertices": 637,
       "target_ratio": 0.5,
       "output_vertices": 637,
-      "runtime_ms": 38.642083,
-      "peak_memory_kb": 4249.6,
+      "runtime_ms": 69.305276,
+      "peak_memory_kb": 4352.0,
       "areal_displacement": 0.01718582,
       "input_area": 51.97695,
       "output_area": 51.97695,
@@ -319,7 +694,7 @@
       "target_vertices": 77,
       "target_ratio": 0.5,
       "output_vertices": 77,
-      "runtime_ms": 7.975555,
+      "runtime_ms": 41.224824,
       "peak_memory_kb": 3840.0,
       "areal_displacement": 1.070584,
       "input_area": 51.78507,
@@ -335,7 +710,7 @@
       "target_vertices": 1277,
       "target_ratio": 0.5,
       "output_vertices": 1277,
-      "runtime_ms": 117.493382,
+      "runtime_ms": 165.333528,
       "peak_memory_kb": 4608.0,
       "areal_displacement": 0.001011786,
       "input_area": 51.97924,
@@ -351,7 +726,7 @@
       "target_vertices": 157,
       "target_ratio": 0.5,
       "output_vertices": 157,
-      "runtime_ms": 9.786063,
+      "runtime_ms": 32.163634,
       "peak_memory_kb": 3840.0,
       "areal_displacement": 0.3233329,
       "input_area": 51.93127,
@@ -367,7 +742,7 @@
       "target_vertices": 317,
       "target_ratio": 0.5,
       "output_vertices": 317,
-      "runtime_ms": 14.155394,
+      "runtime_ms": 43.5107,
       "peak_memory_kb": 3840.0,
       "areal_displacement": 0.09431071,
       "input_area": 51.96782,
@@ -383,7 +758,7 @@
       "target_vertices": 956,
       "target_ratio": 0.500262,
       "output_vertices": 956,
-      "runtime_ms": 68.581885,
+      "runtime_ms": 94.507607,
       "peak_memory_kb": 4352.0,
       "areal_displacement": 0.02186903,
       "input_area": 36.79784,
@@ -399,7 +774,7 @@
       "target_vertices": 116,
       "target_ratio": 0.502165,
       "output_vertices": 116,
-      "runtime_ms": 9.080181,
+      "runtime_ms": 26.750064,
       "peak_memory_kb": 3840.0,
       "areal_displacement": 0.9016366,
       "input_area": 36.662,
@@ -415,8 +790,8 @@
       "target_vertices": 1916,
       "target_ratio": 0.500131,
       "output_vertices": 1916,
-      "runtime_ms": 217.976392,
-      "peak_memory_kb": 4864.0,
+      "runtime_ms": 307.504954,
+      "peak_memory_kb": 4761.6,
       "areal_displacement": 0.006409136,
       "input_area": 36.79946,
       "output_area": 36.79946,
@@ -431,8 +806,8 @@
       "target_vertices": 236,
       "target_ratio": 0.501062,
       "output_vertices": 236,
-      "runtime_ms": 17.738275,
-      "peak_memory_kb": 3840.0,
+      "runtime_ms": 47.320264,
+      "peak_memory_kb": 3788.8,
       "areal_displacement": 0.2652582,
       "input_area": 36.7655,
       "output_area": 36.7655,
@@ -447,7 +822,7 @@
       "target_vertices": 476,
       "target_ratio": 0.500526,
       "output_vertices": 476,
-      "runtime_ms": 23.612637,
+      "runtime_ms": 43.899878,
       "peak_memory_kb": 4096.0,
       "areal_displacement": 0.1238111,
       "input_area": 36.79137,
@@ -472,12 +847,12 @@
             6403
           ],
           "y": [
-            30.715553,
-            11.069601,
-            19.884043,
-            56.918031,
-            208.99983,
-            469.468341
+            34.524626,
+            30.682081,
+            46.302232,
+            95.912359,
+            301.140085,
+            703.799494
           ],
           "text": [
             "test_comb_teeth_50",
@@ -509,9 +884,9 @@
             3840.0,
             4096.0,
             4352.0,
-            5017.6,
-            6567.2,
-            11546.4
+            5068.8,
+            6508.0,
+            11547.2
           ],
           "text": [
             "test_comb_teeth_50",
@@ -539,11 +914,11 @@
             2554
           ],
           "y": [
-            7.975555,
-            9.786063,
-            14.155394,
-            38.642083,
-            117.493382
+            41.224824,
+            32.163634,
+            43.5107,
+            69.305276,
+            165.333528
           ],
           "text": [
             "test_hole_graze_20",
@@ -573,7 +948,7 @@
             3840.0,
             3840.0,
             3840.0,
-            4249.6,
+            4352.0,
             4608.0
           ],
           "text": [
@@ -601,11 +976,11 @@
             2554
           ],
           "y": [
-            8.552972,
-            9.841797,
-            13.911758,
-            33.784822,
-            103.268343
+            23.550574,
+            29.383076,
+            43.981785,
+            63.846279,
+            158.863015
           ],
           "text": [
             "test_corridor_20",
@@ -636,7 +1011,7 @@
             3840.0,
             3840.0,
             4096.0,
-            4556.8
+            4608.0
           ],
           "text": [
             "test_corridor_20",
@@ -663,11 +1038,11 @@
             3831
           ],
           "y": [
-            9.080181,
-            17.738275,
-            23.612637,
-            68.581885,
-            217.976392
+            26.750064,
+            47.320264,
+            43.899878,
+            94.507607,
+            307.504954
           ],
           "text": [
             "test_twoholes_20",
@@ -695,10 +1070,10 @@
           ],
           "y": [
             3840.0,
-            3840.0,
+            3788.8,
             4096.0,
             4352.0,
-            4864.0
+            4761.6
           ],
           "text": [
             "test_twoholes_20",
@@ -711,13 +1086,15 @@
       ]
     },
     "comb_displacement": {
-      "title": "Areal displacement vs target vertex count (test_comb_teeth_1600)",
+      "title": "Areal displacement vs target vertex count (comb)",
       "x_label": "Target vertices",
       "y_label": "Areal displacement",
       "series": [
         {
           "name": "areal_displacement",
           "x": [
+            1921,
+            2561,
             3202,
             3842,
             4482,
@@ -725,12 +1102,304 @@
             5763
           ],
           "y": [
+            4425.835,
+            2865.829,
             1326.791,
             1060.875,
             795.7779,
             530.6812,
             265.1703
+          ],
+          "text": [
+            "comb:test_comb_teeth_1600",
+            "comb:test_comb_teeth_1600",
+            "comb:test_comb_teeth_1600",
+            "comb:test_comb_teeth_1600",
+            "comb:test_comb_teeth_1600",
+            "comb:test_comb_teeth_1600",
+            "comb:test_comb_teeth_1600"
           ]
+        }
+      ]
+    },
+    "hole_graze_displacement": {
+      "title": "Areal displacement vs target vertex count (hole_graze)",
+      "x_label": "Target vertices",
+      "y_label": "Areal displacement",
+      "series": [
+        {
+          "name": "areal_displacement",
+          "x": [
+            766,
+            1022,
+            1277,
+            1532,
+            1788,
+            2043,
+            2299
+          ],
+          "y": [
+            0.005301921,
+            0.002559693,
+            0.001011786,
+            4.270971e-06,
+            1.247383e-06,
+            1.454947e-13,
+            1.3195e-13
+          ],
+          "text": [
+            "hole_graze:test_hole_graze_320",
+            "hole_graze:test_hole_graze_320",
+            "hole_graze:test_hole_graze_320",
+            "hole_graze:test_hole_graze_320",
+            "hole_graze:test_hole_graze_320",
+            "hole_graze:test_hole_graze_320",
+            "hole_graze:test_hole_graze_320"
+          ]
+        }
+      ]
+    },
+    "corridor_displacement": {
+      "title": "Areal displacement vs target vertex count (corridor)",
+      "x_label": "Target vertices",
+      "y_label": "Areal displacement",
+      "series": [
+        {
+          "name": "areal_displacement",
+          "x": [
+            766,
+            1022,
+            1277,
+            1532,
+            1788,
+            2043,
+            2299
+          ],
+          "y": [
+            0.002289173,
+            0.002023645,
+            0.001637943,
+            0.001335257,
+            0.0008743777,
+            0.0007270417,
+            0.0002938207
+          ],
+          "text": [
+            "corridor:test_corridor_320",
+            "corridor:test_corridor_320",
+            "corridor:test_corridor_320",
+            "corridor:test_corridor_320",
+            "corridor:test_corridor_320",
+            "corridor:test_corridor_320",
+            "corridor:test_corridor_320"
+          ]
+        }
+      ]
+    },
+    "two_close_holes_displacement": {
+      "title": "Areal displacement vs target vertex count (two_close_holes)",
+      "x_label": "Target vertices",
+      "y_label": "Areal displacement",
+      "series": [
+        {
+          "name": "areal_displacement",
+          "x": [
+            1149,
+            1532,
+            1916,
+            2299,
+            2682,
+            3065,
+            3448
+          ],
+          "y": [
+            0.01106504,
+            0.01033821,
+            0.006409136,
+            0.004534076,
+            0.003344675,
+            0.002981209,
+            0.001452079
+          ],
+          "text": [
+            "two_close_holes:test_twoholes_320",
+            "two_close_holes:test_twoholes_320",
+            "two_close_holes:test_twoholes_320",
+            "two_close_holes:test_twoholes_320",
+            "two_close_holes:test_twoholes_320",
+            "two_close_holes:test_twoholes_320",
+            "two_close_holes:test_twoholes_320"
+          ]
+        }
+      ]
+    }
+  },
+  "fits": {
+    "comb": {
+      "runtime_ms": [
+        {
+          "model": "c*nlogn",
+          "c": 0.00846598217435812,
+          "k": null,
+          "r2": 0.9894495963531014
+        },
+        {
+          "model": "c*n",
+          "c": 0.10390879702748504,
+          "k": 1.0,
+          "r2": 0.9741615998491115
+        },
+        {
+          "model": "c*n^k",
+          "c": 0.1360257752135028,
+          "k": 0.9379630301230557,
+          "r2": 0.8777808174873987
+        }
+      ],
+      "peak_memory_kb": [
+        {
+          "model": "c*n^k",
+          "c": 698.9744088825141,
+          "k": 0.2917709081757289,
+          "r2": 0.7976331634037728
+        },
+        {
+          "model": "c*n",
+          "c": 1.9905019517462013,
+          "k": 1.0,
+          "r2": 0.17804990142611454
+        },
+        {
+          "model": "c*nlogn",
+          "c": 0.1585787707992849,
+          "k": null,
+          "r2": 0.0006010391672039983
+        }
+      ]
+    },
+    "hole_graze": {
+      "runtime_ms": [
+        {
+          "model": "c*n",
+          "c": 0.06396469539644717,
+          "k": 1.0,
+          "r2": 0.8928321703514069
+        },
+        {
+          "model": "c*nlogn",
+          "c": 0.005780814662451587,
+          "k": null,
+          "r2": 0.8641932711344297
+        },
+        {
+          "model": "c*n^k",
+          "c": 2.2560310968792554,
+          "k": 0.5038614980381098,
+          "r2": 0.7575736591940508
+        }
+      ],
+      "peak_memory_kb": [
+        {
+          "model": "c*n^k",
+          "c": 2606.2807705501696,
+          "k": 0.06965454038556793,
+          "r2": 0.8148199602639878
+        },
+        {
+          "model": "c*n",
+          "c": 2.4849266342647165,
+          "k": 1.0,
+          "r2": -57.88504612318432
+        },
+        {
+          "model": "c*nlogn",
+          "c": 0.21628247458213973,
+          "k": null,
+          "r2": -66.20882988922894
+        }
+      ]
+    },
+    "corridor": {
+      "runtime_ms": [
+        {
+          "model": "c*n",
+          "c": 0.06087635500042674,
+          "k": 1.0,
+          "r2": 0.956285249638889
+        },
+        {
+          "model": "c*nlogn",
+          "c": 0.005511575211594689,
+          "k": null,
+          "r2": 0.9400757185632175
+        },
+        {
+          "model": "c*n^k",
+          "c": 0.7363865976146073,
+          "k": 0.6539071667788278,
+          "r2": 0.880090350784043
+        }
+      ],
+      "peak_memory_kb": [
+        {
+          "model": "c*n^k",
+          "c": 2722.6493743291358,
+          "k": 0.06099805588622009,
+          "r2": 0.7369050000386637
+        },
+        {
+          "model": "c*n",
+          "c": 2.447310230604388,
+          "k": 1.0,
+          "r2": -67.03322853063229
+        },
+        {
+          "model": "c*nlogn",
+          "c": 0.21308213759536027,
+          "k": null,
+          "r2": -76.45759357589735
+        }
+      ]
+    },
+    "two_close_holes": {
+      "runtime_ms": [
+        {
+          "model": "c*nlogn",
+          "c": 0.006348638687343799,
+          "k": null,
+          "r2": 0.9509776058135065
+        },
+        {
+          "model": "c*n",
+          "c": 0.0732450883239949,
+          "k": 1.0,
+          "r2": 0.9315767733327832
+        },
+        {
+          "model": "c*n^k",
+          "c": 0.302100667065048,
+          "k": 0.7935405108160677,
+          "r2": 0.8005375048417647
+        }
+      ],
+      "peak_memory_kb": [
+        {
+          "model": "c*n^k",
+          "c": 2384.877695006039,
+          "k": 0.08093775312178426,
+          "r2": 0.9152821114837533
+        },
+        {
+          "model": "c*n",
+          "c": 1.6980253264223526,
+          "k": 1.0,
+          "r2": -47.60642049118428
+        },
+        {
+          "model": "c*nlogn",
+          "c": 0.14074471706742342,
+          "k": null,
+          "r2": -54.28504032073258
         }
       ]
     }
