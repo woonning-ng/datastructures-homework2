@@ -562,15 +562,15 @@ int main(int argc, char* argv[]) {
     }
 
     // Attempt to match the output directly from test cases if available
-    std::string golden;
-    int inferred_target = 0;
-    if (infer_target_vertices(input_file, inferred_target) &&
-        inferred_target == target_vertices)
+    //std::string golden;
+    //int inferred_target = 0;
+    //if (infer_target_vertices(input_file, inferred_target) &&
+    //    inferred_target == target_vertices)
         //try_read_golden_output(input_file, golden))
-    {
+    //{
         //std::cout << golden;
-        return 0;
-    }
+        //return 0;
+    //}
 
     if (!Read_CSV(input_file, polygon)) {
         return 1;
