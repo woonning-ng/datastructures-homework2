@@ -11,7 +11,7 @@ function Convert-ToBashPath {
         [string]$Path
     )
 
-    $resolvedPath = [System.IO.Path]::GetFullPath($Path)
+    $resolvedPath = (Resolve-Path -LiteralPath $Path).Path
     if ($resolvedPath -match '^([A-Za-z]):\\(.*)$') {
         $drive = $matches[1].ToLower()
         $tail = $matches[2] -replace '\\', '/'
@@ -24,7 +24,7 @@ function Convert-ToBashPath {
 function Get-TestCases {
     $repoRoot = Get-RepositoryRoot
     $testCasesDir = Join-Path $repoRoot "test_cases"
-    $manifestPath = Join-Path $testCasesDir "test_manifest.tsv"
+    $manifestPath = Join-Path $testCasesDir "README.md"
     $generatedDir = Join-Path $repoRoot "generated_outputs"
 
     if (-not (Test-Path -LiteralPath $manifestPath)) {
@@ -32,20 +32,53 @@ function Get-TestCases {
     }
 
     $testCases = @()
-    foreach ($rawLine in Get-Content -LiteralPath $manifestPath | Select-Object -Skip 1) {
+    $headers = $null
+
+    foreach ($rawLine in Get-Content -LiteralPath $manifestPath) {
         $line = $rawLine.Trim()
-        if ([string]::IsNullOrWhiteSpace($line)) {
+
+        if (-not $line.StartsWith("|")) {
+            $headers = $null
             continue
         }
 
-        $cells = @($line -split "`t")
-        if ($cells.Count -lt 3) {
+        $cells = @($line.Trim("|").Split("|") | ForEach-Object { $_.Trim() })
+        if ($cells.Count -eq 0) {
             continue
         }
 
-        $inputName = $cells[0].Trim()
-        $targetText = $cells[1].Trim()
-        $outputName = $cells[2].Trim()
+        if (($cells -contains "Input file") -and ($cells -contains "Output file")) {
+            $headers = $cells
+            continue
+        }
+
+        if ($null -eq $headers) {
+            continue
+        }
+
+        $isSeparator = $true
+        foreach ($cell in $cells) {
+            if ($cell -notmatch '^[\-:]+$') {
+                $isSeparator = $false
+                break
+            }
+        }
+        if ($isSeparator) {
+            continue
+        }
+
+        $row = @{}
+        for ($i = 0; $i -lt [Math]::Min($headers.Count, $cells.Count); $i++) {
+            $row[$headers[$i]] = $cells[$i]
+        }
+
+        if (-not $row.ContainsKey("Input file") -or -not $row.ContainsKey("Target") -or -not $row.ContainsKey("Output file")) {
+            continue
+        }
+
+        $inputName = $row["Input file"].Replace('`', '').Trim()
+        $outputName = $row["Output file"].Replace('`', '').Trim()
+        $targetText = $row["Target"].Replace('`', '').Trim()
 
         $inputPath = Join-Path $testCasesDir $inputName
         $expectedPath = Join-Path $testCasesDir $outputName
@@ -108,33 +141,6 @@ function Read-FileTextSafe {
     }
     catch {
         return $null
-    }
-}
-
-function Get-FileSha256 {
-    param(
-        [Parameter(Mandatory = $true)]
-        [string]$Path
-    )
-
-    if (Get-Command Get-FileHash -ErrorAction SilentlyContinue) {
-        return (Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash
-    }
-
-    $sha256 = [System.Security.Cryptography.SHA256]::Create()
-    try {
-        $stream = [System.IO.File]::OpenRead($Path)
-        try {
-            $hashBytes = $sha256.ComputeHash($stream)
-        }
-        finally {
-            $stream.Dispose()
-        }
-
-        return ([System.BitConverter]::ToString($hashBytes)).Replace("-", "")
-    }
-    finally {
-        $sha256.Dispose()
     }
 }
 
@@ -245,8 +251,8 @@ function Invoke-CompareOutputs {
             continue
         }
 
-        $expectedHash = Get-FileSha256 -Path $testCase.ExpectedPath
-        $actualHash = Get-FileSha256 -Path $testCase.GeneratedPath
+        $expectedHash = (Get-FileHash -LiteralPath $testCase.ExpectedPath -Algorithm SHA256).Hash
+        $actualHash = (Get-FileHash -LiteralPath $testCase.GeneratedPath -Algorithm SHA256).Hash
 
         if ($expectedHash -eq $actualHash) {
             $passed++
