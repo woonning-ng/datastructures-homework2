@@ -54,8 +54,8 @@
       "target_vertices": 1921,
       "target_ratio": 0.300016,
       "output_vertices": 1921,
-      "runtime_ms": 1146.713465,
-      "peak_memory_kb": 11479.2,
+      "runtime_ms": 427.283253,
+      "peak_memory_kb": 10513.6,
       "areal_displacement": 4425.835,
       "input_area": 4800.0,
       "output_area": 4800.0,
@@ -70,8 +70,8 @@
       "target_vertices": 2561,
       "target_ratio": 0.399969,
       "output_vertices": 2561,
-      "runtime_ms": 993.20137,
-      "peak_memory_kb": 11556.0,
+      "runtime_ms": 277.082638,
+      "peak_memory_kb": 10479.2,
       "areal_displacement": 2865.829,
       "input_area": 4800.0,
       "output_area": 4800.0,
@@ -86,8 +86,8 @@
       "target_vertices": 3202,
       "target_ratio": 0.500078,
       "output_vertices": 3202,
-      "runtime_ms": 681.467766,
-      "peak_memory_kb": 11538.4,
+      "runtime_ms": 103.88288,
+      "peak_memory_kb": 10606.4,
       "areal_displacement": 1326.791,
       "input_area": 4800.0,
       "output_area": 4800.0,
@@ -102,8 +102,8 @@
       "target_vertices": 3842,
       "target_ratio": 0.600031,
       "output_vertices": 3842,
-      "runtime_ms": 603.733251,
-      "peak_memory_kb": 11564.8,
+      "runtime_ms": 94.325932,
+      "peak_memory_kb": 10484.8,
       "areal_displacement": 1060.875,
       "input_area": 4800.0,
       "output_area": 4800.0,
@@ -118,8 +118,8 @@
       "target_vertices": 4482,
       "target_ratio": 0.699984,
       "output_vertices": 4482,
-      "runtime_ms": 495.611953,
-      "peak_memory_kb": 9735.2,
+      "runtime_ms": 89.195837,
+      "peak_memory_kb": 9514.4,
       "areal_displacement": 795.7779,
       "input_area": 4800.0,
       "output_area": 4800.0,
@@ -134,8 +134,8 @@
       "target_vertices": 5122,
       "target_ratio": 0.799938,
       "output_vertices": 5122,
-      "runtime_ms": 401.444278,
-      "peak_memory_kb": 8974.4,
+      "runtime_ms": 78.959924,
+      "peak_memory_kb": 9065.6,
       "areal_displacement": 530.6812,
       "input_area": 4800.0,
       "output_area": 4800.0,
@@ -150,8 +150,8 @@
       "target_vertices": 5763,
       "target_ratio": 0.900047,
       "output_vertices": 5763,
-      "runtime_ms": 302.025774,
-      "peak_memory_kb": 8508.0,
+      "runtime_ms": 74.840419,
+      "peak_memory_kb": 8296.8,
       "areal_displacement": 265.1703,
       "input_area": 4800.0,
       "output_area": 4800.0,
@@ -166,8 +166,8 @@
       "target_vertices": 766,
       "target_ratio": 0.299922,
       "output_vertices": 766,
-      "runtime_ms": 178.897357,
-      "peak_memory_kb": 4505.6,
+      "runtime_ms": 155.733648,
+      "peak_memory_kb": 4352.0,
       "areal_displacement": 0.002289173,
       "input_area": 8.599874,
       "output_area": 8.599874,
@@ -182,8 +182,8 @@
       "target_vertices": 1022,
       "target_ratio": 0.400157,
       "output_vertices": 1022,
-      "runtime_ms": 152.078112,
-      "peak_memory_kb": 4608.0,
+      "runtime_ms": 139.018507,
+      "peak_memory_kb": 4556.8,
       "areal_displacement": 0.002023645,
       "input_area": 8.599874,
       "output_area": 8.599874,
@@ -198,8 +198,8 @@
       "target_vertices": 1277,
       "target_ratio": 0.5,
       "output_vertices": 1277,
-      "runtime_ms": 153.655244,
-      "peak_memory_kb": 4608.0,
+      "runtime_ms": 135.404656,
+      "peak_memory_kb": 4352.0,
       "areal_displacement": 0.001637943,
       "input_area": 8.599874,
       "output_area": 8.599874,
@@ -214,7 +214,7 @@
       "target_vertices": 1532,
       "target_ratio": 0.599843,
       "output_vertices": 1532,
-      "runtime_ms": 142.302891,
+      "runtime_ms": 127.993781,
       "peak_memory_kb": 4608.0,
       "areal_displacement": 0.001335257,
       "input_area": 8.599874,
@@ -230,7 +230,7 @@
       "target_vertices": 1788,
       "target_ratio": 0.700078,
       "output_vertices": 1788,
-      "runtime_ms": 111.528502,
+      "runtime_ms": 116.527176,
       "peak_memory_kb": 4608.0,
       "areal_displacement": 0.0008743777,
       "input_area": 8.599874,
@@ -246,8 +246,8 @@
       "target_vertices": 2043,
       "target_ratio": 0.799922,
       "output_vertices": 2043,
-      "runtime_ms": 96.661545,
-      "peak_memory_kb": 4556.8,
+      "runtime_ms": 89.860567,
+      "peak_memory_kb": 4608.0,
       "areal_displacement": 0.0007270417,
       "input_area": 8.599874,
       "output_area": 8.599874,
@@ -262,8 +262,8 @@
       "target_vertices": 2299,
       "target_ratio": 0.900157,
       "output_vertices": 2299,
-      "runtime_ms": 69.532591,
-      "peak_memory_kb": 4352.0,
+      "runtime_ms": 67.873565,
+      "peak_memory_kb": 4300.8,
       "areal_displacement": 0.0002938207,
       "input_area": 8.599874,
       "output_area": 8.599874,
@@ -278,8 +278,8 @@
       "target_vertices": 766,
       "target_ratio": 0.299922,
       "output_vertices": 766,
-      "runtime_ms": 208.311531,
-      "peak_memory_kb": 4608.0,
+      "runtime_ms": 165.250981,
+      "peak_memory_kb": 4556.8,
       "areal_displacement": 0.005301921,
       "input_area": 51.97924,
       "output_area": 51.97924,
@@ -294,7 +294,7 @@
       "target_vertices": 1022,
       "target_ratio": 0.400157,
       "output_vertices": 1022,
-      "runtime_ms": 173.35745,
+      "runtime_ms": 160.488922,
       "peak_memory_kb": 4608.0,
       "areal_displacement": 0.002559693,
       "input_area": 51.97924,
@@ -310,7 +310,7 @@
       "target_vertices": 1277,
       "target_ratio": 0.5,
       "output_vertices": 1277,
-      "runtime_ms": 155.316576,
+      "runtime_ms": 152.435491,
       "peak_memory_kb": 4608.0,
       "areal_displacement": 0.001011786,
       "input_area": 51.97924,
@@ -326,7 +326,7 @@
       "target_vertices": 1532,
       "target_ratio": 0.599843,
       "output_vertices": 1532,
-      "runtime_ms": 127.797512,
+      "runtime_ms": 165.220826,
       "peak_memory_kb": 4608.0,
       "areal_displacement": 4.270971e-06,
       "input_area": 51.97924,
@@ -342,7 +342,7 @@
       "target_vertices": 1788,
       "target_ratio": 0.700078,
       "output_vertices": 1788,
-      "runtime_ms": 116.0226,
+      "runtime_ms": 166.628155,
       "peak_memory_kb": 4608.0,
       "areal_displacement": 1.247383e-06,
       "input_area": 51.97924,
@@ -358,7 +358,7 @@
       "target_vertices": 2043,
       "target_ratio": 0.799922,
       "output_vertices": 2043,
-      "runtime_ms": 87.966186,
+      "runtime_ms": 151.697071,
       "peak_memory_kb": 4608.0,
       "areal_displacement": 1.454947e-13,
       "input_area": 51.97924,
@@ -374,7 +374,7 @@
       "target_vertices": 2299,
       "target_ratio": 0.900157,
       "output_vertices": 2299,
-      "runtime_ms": 69.035078,
+      "runtime_ms": 129.249152,
       "peak_memory_kb": 4352.0,
       "areal_displacement": 1.3195e-13,
       "input_area": 51.97924,
@@ -390,8 +390,8 @@
       "target_vertices": 1149,
       "target_ratio": 0.299922,
       "output_vertices": 1149,
-      "runtime_ms": 326.716251,
-      "peak_memory_kb": 4864.0,
+      "runtime_ms": 336.120013,
+      "peak_memory_kb": 4812.8,
       "areal_displacement": 0.01106504,
       "input_area": 36.79946,
       "output_area": 36.79946,
@@ -406,8 +406,8 @@
       "target_vertices": 1532,
       "target_ratio": 0.399896,
       "output_vertices": 1532,
-      "runtime_ms": 301.900916,
-      "peak_memory_kb": 4864.0,
+      "runtime_ms": 307.829702,
+      "peak_memory_kb": 4812.8,
       "areal_displacement": 0.01033821,
       "input_area": 36.79946,
       "output_area": 36.79946,
@@ -422,7 +422,7 @@
       "target_vertices": 1916,
       "target_ratio": 0.500131,
       "output_vertices": 1916,
-      "runtime_ms": 276.897523,
+      "runtime_ms": 269.438501,
       "peak_memory_kb": 4864.0,
       "areal_displacement": 0.006409136,
       "input_area": 36.79946,
@@ -438,7 +438,7 @@
       "target_vertices": 2299,
       "target_ratio": 0.600104,
       "output_vertices": 2299,
-      "runtime_ms": 259.406987,
+      "runtime_ms": 274.241551,
       "peak_memory_kb": 4864.0,
       "areal_displacement": 0.004534076,
       "input_area": 36.79946,
@@ -454,8 +454,8 @@
       "target_vertices": 2682,
       "target_ratio": 0.700078,
       "output_vertices": 2682,
-      "runtime_ms": 226.105865,
-      "peak_memory_kb": 4812.8,
+      "runtime_ms": 195.128247,
+      "peak_memory_kb": 4761.6,
       "areal_displacement": 0.003344675,
       "input_area": 36.79946,
       "output_area": 36.79946,
@@ -470,8 +470,8 @@
       "target_vertices": 3065,
       "target_ratio": 0.800052,
       "output_vertices": 3065,
-      "runtime_ms": 164.379566,
-      "peak_memory_kb": 4608.0,
+      "runtime_ms": 153.169586,
+      "peak_memory_kb": 4761.6,
       "areal_displacement": 0.002981209,
       "input_area": 36.79946,
       "output_area": 36.79946,
@@ -486,7 +486,7 @@
       "target_vertices": 3448,
       "target_ratio": 0.900026,
       "output_vertices": 3448,
-      "runtime_ms": 113.505417,
+      "runtime_ms": 96.902993,
       "peak_memory_kb": 4608.0,
       "areal_displacement": 0.001452079,
       "input_area": 36.79946,
@@ -502,7 +502,7 @@
       "target_vertices": 202,
       "target_ratio": 0.501241,
       "output_vertices": 202,
-      "runtime_ms": 30.682081,
+      "runtime_ms": 32.511554,
       "peak_memory_kb": 4096.0,
       "areal_displacement": 84.14994,
       "input_area": 300.0,
@@ -518,8 +518,8 @@
       "target_vertices": 3202,
       "target_ratio": 0.500078,
       "output_vertices": 3202,
-      "runtime_ms": 703.799494,
-      "peak_memory_kb": 11547.2,
+      "runtime_ms": 107.369173,
+      "peak_memory_kb": 10605.6,
       "areal_displacement": 1326.791,
       "input_area": 4800.0,
       "output_area": 4800.0,
@@ -534,7 +534,7 @@
       "target_vertices": 402,
       "target_ratio": 0.500623,
       "output_vertices": 402,
-      "runtime_ms": 46.302232,
+      "runtime_ms": 53.334939,
       "peak_memory_kb": 4352.0,
       "areal_displacement": 166.9927,
       "input_area": 600.0,
@@ -550,8 +550,8 @@
       "target_vertices": 802,
       "target_ratio": 0.500312,
       "output_vertices": 802,
-      "runtime_ms": 95.912359,
-      "peak_memory_kb": 5068.8,
+      "runtime_ms": 47.737909,
+      "peak_memory_kb": 4659.2,
       "areal_displacement": 332.6781,
       "input_area": 1200.0,
       "output_area": 1200.0,
@@ -566,7 +566,7 @@
       "target_vertices": 102,
       "target_ratio": 0.502463,
       "output_vertices": 102,
-      "runtime_ms": 34.524626,
+      "runtime_ms": 29.955289,
       "peak_memory_kb": 3840.0,
       "areal_displacement": 42.72859,
       "input_area": 150.0,
@@ -582,8 +582,8 @@
       "target_vertices": 1602,
       "target_ratio": 0.500156,
       "output_vertices": 1602,
-      "runtime_ms": 301.140085,
-      "peak_memory_kb": 6508.0,
+      "runtime_ms": 64.385969,
+      "peak_memory_kb": 6108.0,
       "areal_displacement": 664.0489,
       "input_area": 2400.0,
       "output_area": 2400.0,
@@ -598,8 +598,8 @@
       "target_vertices": 637,
       "target_ratio": 0.5,
       "output_vertices": 637,
-      "runtime_ms": 63.846279,
-      "peak_memory_kb": 4096.0,
+      "runtime_ms": 65.062005,
+      "peak_memory_kb": 3942.4,
       "areal_displacement": 0.005767529,
       "input_area": 8.599496,
       "output_area": 8.599496,
@@ -614,7 +614,7 @@
       "target_vertices": 77,
       "target_ratio": 0.5,
       "output_vertices": 77,
-      "runtime_ms": 23.550574,
+      "runtime_ms": 27.483232,
       "peak_memory_kb": 3840.0,
       "areal_displacement": 0.2338043,
       "input_area": 8.56775,
@@ -630,7 +630,7 @@
       "target_vertices": 1277,
       "target_ratio": 0.5,
       "output_vertices": 1277,
-      "runtime_ms": 158.863015,
+      "runtime_ms": 135.628639,
       "peak_memory_kb": 4608.0,
       "areal_displacement": 0.001637943,
       "input_area": 8.599874,
@@ -646,7 +646,7 @@
       "target_vertices": 157,
       "target_ratio": 0.5,
       "output_vertices": 157,
-      "runtime_ms": 29.383076,
+      "runtime_ms": 32.465873,
       "peak_memory_kb": 3840.0,
       "areal_displacement": 0.07005579,
       "input_area": 8.591937,
@@ -662,7 +662,7 @@
       "target_vertices": 317,
       "target_ratio": 0.5,
       "output_vertices": 317,
-      "runtime_ms": 43.981785,
+      "runtime_ms": 35.756179,
       "peak_memory_kb": 3840.0,
       "areal_displacement": 0.02054052,
       "input_area": 8.597984,
@@ -678,7 +678,7 @@
       "target_vertices": 637,
       "target_ratio": 0.5,
       "output_vertices": 637,
-      "runtime_ms": 69.305276,
+      "runtime_ms": 64.134104,
       "peak_memory_kb": 4352.0,
       "areal_displacement": 0.01718582,
       "input_area": 51.97695,
@@ -694,7 +694,7 @@
       "target_vertices": 77,
       "target_ratio": 0.5,
       "output_vertices": 77,
-      "runtime_ms": 41.224824,
+      "runtime_ms": 24.718529,
       "peak_memory_kb": 3840.0,
       "areal_displacement": 1.070584,
       "input_area": 51.78507,
@@ -710,7 +710,7 @@
       "target_vertices": 1277,
       "target_ratio": 0.5,
       "output_vertices": 1277,
-      "runtime_ms": 165.333528,
+      "runtime_ms": 148.314759,
       "peak_memory_kb": 4608.0,
       "areal_displacement": 0.001011786,
       "input_area": 51.97924,
@@ -726,7 +726,7 @@
       "target_vertices": 157,
       "target_ratio": 0.5,
       "output_vertices": 157,
-      "runtime_ms": 32.163634,
+      "runtime_ms": 27.980727,
       "peak_memory_kb": 3840.0,
       "areal_displacement": 0.3233329,
       "input_area": 51.93127,
@@ -742,7 +742,7 @@
       "target_vertices": 317,
       "target_ratio": 0.5,
       "output_vertices": 317,
-      "runtime_ms": 43.5107,
+      "runtime_ms": 34.278965,
       "peak_memory_kb": 3840.0,
       "areal_displacement": 0.09431071,
       "input_area": 51.96782,
@@ -758,7 +758,7 @@
       "target_vertices": 956,
       "target_ratio": 0.500262,
       "output_vertices": 956,
-      "runtime_ms": 94.507607,
+      "runtime_ms": 92.436196,
       "peak_memory_kb": 4352.0,
       "areal_displacement": 0.02186903,
       "input_area": 36.79784,
@@ -774,7 +774,7 @@
       "target_vertices": 116,
       "target_ratio": 0.502165,
       "output_vertices": 116,
-      "runtime_ms": 26.750064,
+      "runtime_ms": 37.824388,
       "peak_memory_kb": 3840.0,
       "areal_displacement": 0.9016366,
       "input_area": 36.662,
@@ -790,8 +790,8 @@
       "target_vertices": 1916,
       "target_ratio": 0.500131,
       "output_vertices": 1916,
-      "runtime_ms": 307.504954,
-      "peak_memory_kb": 4761.6,
+      "runtime_ms": 267.03496,
+      "peak_memory_kb": 4864.0,
       "areal_displacement": 0.006409136,
       "input_area": 36.79946,
       "output_area": 36.79946,
@@ -806,8 +806,8 @@
       "target_vertices": 236,
       "target_ratio": 0.501062,
       "output_vertices": 236,
-      "runtime_ms": 47.320264,
-      "peak_memory_kb": 3788.8,
+      "runtime_ms": 29.06623,
+      "peak_memory_kb": 3840.0,
       "areal_displacement": 0.2652582,
       "input_area": 36.7655,
       "output_area": 36.7655,
@@ -822,7 +822,7 @@
       "target_vertices": 476,
       "target_ratio": 0.500526,
       "output_vertices": 476,
-      "runtime_ms": 43.899878,
+      "runtime_ms": 36.963463,
       "peak_memory_kb": 4096.0,
       "areal_displacement": 0.1238111,
       "input_area": 36.79137,
@@ -847,12 +847,12 @@
             6403
           ],
           "y": [
-            34.524626,
-            30.682081,
-            46.302232,
-            95.912359,
-            301.140085,
-            703.799494
+            29.955289,
+            32.511554,
+            53.334939,
+            47.737909,
+            64.385969,
+            107.369173
           ],
           "text": [
             "test_comb_teeth_50",
@@ -884,9 +884,9 @@
             3840.0,
             4096.0,
             4352.0,
-            5068.8,
-            6508.0,
-            11547.2
+            4659.2,
+            6108.0,
+            10605.6
           ],
           "text": [
             "test_comb_teeth_50",
@@ -914,11 +914,11 @@
             2554
           ],
           "y": [
-            41.224824,
-            32.163634,
-            43.5107,
-            69.305276,
-            165.333528
+            24.718529,
+            27.980727,
+            34.278965,
+            64.134104,
+            148.314759
           ],
           "text": [
             "test_hole_graze_20",
@@ -976,11 +976,11 @@
             2554
           ],
           "y": [
-            23.550574,
-            29.383076,
-            43.981785,
-            63.846279,
-            158.863015
+            27.483232,
+            32.465873,
+            35.756179,
+            65.062005,
+            135.628639
           ],
           "text": [
             "test_corridor_20",
@@ -1010,7 +1010,7 @@
             3840.0,
             3840.0,
             3840.0,
-            4096.0,
+            3942.4,
             4608.0
           ],
           "text": [
@@ -1038,11 +1038,11 @@
             3831
           ],
           "y": [
-            26.750064,
-            47.320264,
-            43.899878,
-            94.507607,
-            307.504954
+            37.824388,
+            29.06623,
+            36.963463,
+            92.436196,
+            267.03496
           ],
           "text": [
             "test_twoholes_20",
@@ -1070,10 +1070,10 @@
           ],
           "y": [
             3840.0,
-            3788.8,
+            3840.0,
             4096.0,
             4352.0,
-            4761.6
+            4864.0
           ],
           "text": [
             "test_twoholes_20",
@@ -1238,42 +1238,42 @@
     "comb": {
       "runtime_ms": [
         {
-          "model": "c*nlogn",
-          "c": 0.00846598217435812,
-          "k": null,
-          "r2": 0.9894495963531014
+          "model": "c*n^k",
+          "c": 4.500006642409284,
+          "k": 0.3444225932063628,
+          "r2": 0.882899099944276
         },
         {
           "model": "c*n",
-          "c": 0.10390879702748504,
+          "c": 0.01887948112150611,
           "k": 1.0,
-          "r2": 0.9741615998491115
+          "r2": 0.18712534558165994
         },
         {
-          "model": "c*n^k",
-          "c": 0.1360257752135028,
-          "k": 0.9379630301230557,
-          "r2": 0.8777808174873987
+          "model": "c*nlogn",
+          "c": 0.001501715436841605,
+          "k": null,
+          "r2": 0.0019982529347141176
         }
       ],
       "peak_memory_kb": [
         {
           "model": "c*n^k",
-          "c": 698.9744088825141,
-          "k": 0.2917709081757289,
-          "r2": 0.7976331634037728
+          "c": 824.3789653312409,
+          "k": 0.2628047138206629,
+          "r2": 0.7660388280488928
         },
         {
           "model": "c*n",
-          "c": 1.9905019517462013,
+          "c": 1.8447907801889303,
           "k": 1.0,
-          "r2": 0.17804990142611454
+          "r2": -0.08354016492036731
         },
         {
           "model": "c*nlogn",
-          "c": 0.1585787707992849,
+          "c": 0.14677135351153672,
           "k": null,
-          "r2": 0.0006010391672039983
+          "r2": -0.2954119535130266
         }
       ]
     },
@@ -1281,21 +1281,21 @@
       "runtime_ms": [
         {
           "model": "c*n",
-          "c": 0.06396469539644717,
+          "c": 0.0570718996357664,
           "k": 1.0,
-          "r2": 0.8928321703514069
+          "r2": 0.9591891598108884
         },
         {
           "model": "c*nlogn",
-          "c": 0.005780814662451587,
+          "c": 0.005168400625391567,
           "k": null,
-          "r2": 0.8641932711344297
+          "r2": 0.9442564698194228
         },
         {
           "model": "c*n^k",
-          "c": 2.2560310968792554,
-          "k": 0.5038614980381098,
-          "r2": 0.7575736591940508
+          "c": 0.8181463505164688,
+          "k": 0.6278356820601576,
+          "r2": 0.8568515337499838
         }
       ],
       "peak_memory_kb": [
@@ -1323,41 +1323,41 @@
       "runtime_ms": [
         {
           "model": "c*n",
-          "c": 0.06087635500042674,
+          "c": 0.05379085029883763,
           "k": 1.0,
-          "r2": 0.956285249638889
+          "r2": 0.922778130079206
         },
         {
           "model": "c*nlogn",
-          "c": 0.005511575211594689,
+          "c": 0.004853489579321527,
           "k": null,
-          "r2": 0.9400757185632175
+          "r2": 0.8829613676327202
         },
         {
           "model": "c*n^k",
-          "c": 0.7363865976146073,
-          "k": 0.6539071667788278,
-          "r2": 0.880090350784043
+          "c": 1.384381921662318,
+          "k": 0.5531312229583304,
+          "r2": 0.8618548487587288
         }
       ],
       "peak_memory_kb": [
         {
           "model": "c*n^k",
-          "c": 2722.6493743291358,
-          "k": 0.06099805588622009,
-          "r2": 0.7369050000386637
+          "c": 2798.670753927025,
+          "k": 0.05554051526312295,
+          "r2": 0.6124044697562052
         },
         {
           "model": "c*n",
-          "c": 2.447310230604388,
+          "c": 2.424740388408191,
           "k": 1.0,
-          "r2": -67.03322853063229
+          "r2": -65.92955500197247
         },
         {
           "model": "c*nlogn",
-          "c": 0.21308213759536027,
+          "c": 0.21116193540329256,
           "k": null,
-          "r2": -76.45759357589735
+          "r2": -75.07162967640726
         }
       ]
     },
@@ -1365,41 +1365,41 @@
       "runtime_ms": [
         {
           "model": "c*nlogn",
-          "c": 0.006348638687343799,
+          "c": 0.005582199238516699,
           "k": null,
-          "r2": 0.9509776058135065
+          "r2": 0.956458969639797
         },
         {
           "model": "c*n",
-          "c": 0.0732450883239949,
+          "c": 0.06444694000395221,
           "k": 1.0,
-          "r2": 0.9315767733327832
+          "r2": 0.9391292754963604
         },
         {
           "model": "c*n^k",
-          "c": 0.302100667065048,
-          "k": 0.7935405108160677,
-          "r2": 0.8005375048417647
+          "c": 0.45474859932364686,
+          "k": 0.7199548711200571,
+          "r2": 0.7526481010624639
         }
       ],
       "peak_memory_kb": [
         {
           "model": "c*n^k",
-          "c": 2384.877695006039,
-          "k": 0.08093775312178426,
-          "r2": 0.9152821114837533
+          "c": 2334.279815632397,
+          "k": 0.08508014076050135,
+          "r2": 0.9096450278255325
         },
         {
           "model": "c*n",
-          "c": 1.6980253264223526,
+          "c": 1.7193708147160522,
           "k": 1.0,
-          "r2": -47.60642049118428
+          "r2": -41.50160334621701
         },
         {
           "model": "c*nlogn",
-          "c": 0.14074471706742342,
+          "c": 0.14260680017470748,
           "k": null,
-          "r2": -54.28504032073258
+          "r2": -47.40357352299464
         }
       ]
     }
